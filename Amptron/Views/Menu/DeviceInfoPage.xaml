@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Amptron.Views.Menu.DeviceInfoPage"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:customViews="clr-namespace:Amptron.Views.CustomViews"
+             xmlns:i18n="clr-namespace:Amptron.i18n"
+             Title="DeviceInfoPage">
+    <StackLayout Padding="0,40,0,0" Orientation="Vertical">
+        <StackLayout Orientation="Horizontal" Padding="20,0">
+            <Label
+                HorizontalOptions="StartAndExpand"
+                Style="{StaticResource PoppinsSemiBoldBlack20}"
+                Text="{i18n:Translate DeviceInfo}"
+                TextTransform="Uppercase" />
+            <Image
+                HeightRequest="28"
+                Source="refresh.png"
+                WidthRequest="28" />
+        </StackLayout>
+        <Grid
+            Padding="20,20,20,0"
+            VerticalOptions="StartAndExpand"
+            ColumnDefinitions="0.45*,0.05*,0.50*"
+            RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
+            RowSpacing="18">
+            <Label
+                HorizontalOptions="End"
+                Style="{StaticResource PoppinsRegularBlack20}"
+                Text="{i18n:Translate DeviceModel}" />
+            <Label
+                Grid.Row="1"
+                HorizontalOptions="End"
+                Style="{StaticResource PoppinsRegularBlack20}"
+                Text="{i18n:Translate DeviceName}"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="2"
+                HorizontalOptions="End"
+                Style="{StaticResource PoppinsRegularBlack20}"
+                Text="{i18n:Translate NoOfCycles}"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="3"
+                HorizontalOptions="End"
+                Style="{StaticResource PoppinsRegularBlack20}"
+                Text="{i18n:Translate Version}"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="4"
+                HorizontalOptions="End"
+                Style="{StaticResource PoppinsRegularBlack20}"
+                Text="{i18n:Translate DeviceCode}"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="5"
+                HorizontalOptions="End"
+                Style="{StaticResource PoppinsRegularBlack20}"
+                Text="{i18n:Translate SNCode}"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="6"
+                HorizontalOptions="End"
+                Style="{StaticResource PoppinsRegularBlack20}"
+                Text="{i18n:Translate Protocol}"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="7"
+                HorizontalOptions="End"
+                Style="{StaticResource PoppinsRegularBlack20}"
+                Text="{i18n:Translate ProtocolVer}"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="8"
+                HorizontalOptions="End"
+                Style="{StaticResource PoppinsRegularBlack20}"
+                Text="{i18n:Translate Status}"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="9"
+                HorizontalOptions="End"
+                Style="{StaticResource PoppinsRegularBlack20}"
+                Text="{i18n:Translate LastUpdated}"
+                VerticalOptions="Center" />
+
+            <Label
+                Grid.Row="0"
+                Grid.Column="1"
+                Style="{StaticResource PoppinsRegularBlack20}"
+                Text=":"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="1"
+                Grid.Column="1"
+                Style="{StaticResource PoppinsRegularBlack20}"
+                Text=":"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="2"
+                Grid.Column="1"
+                Style="{StaticResource PoppinsRegularBlack20}"
+                Text=":"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="3"
+                Grid.Column="1"
+                Style="{StaticResource PoppinsRegularBlack20}"
+                Text=":"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="4"
+                Grid.Column="1"
+                Style="{StaticResource PoppinsRegularBlack20}"
+                Text=":"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="5"
+                Grid.Column="1"
+                Style="{StaticResource PoppinsRegularBlack20}"
+                Text=":"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="6"
+                Grid.Column="1"
+                Style="{StaticResource PoppinsRegularBlack20}"
+                Text=":"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="7"
+                Grid.Column="1"
+                Style="{StaticResource PoppinsRegularBlack20}"
+                Text=":"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="8"
+                Grid.Column="1"
+                Style="{StaticResource PoppinsRegularBlack20}"
+                Text=":"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="9"
+                Grid.Column="1"
+                Style="{StaticResource PoppinsRegularBlack20}"
+                Text=":"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="0"
+                Grid.Column="2"
+                Style="{StaticResource PoppinsRegularBlack17}"
+                Text="{Binding Device.DeviceModel}"
+                VerticalOptions="Center" />
+            <Frame
+                Grid.Row="1"
+                Grid.Column="2"
+                Padding="0,0,5,0"
+                VerticalOptions="Center">
+                <StackLayout Orientation="Horizontal">
+                    <!--<Label
+                        IsVisible="{Binding IsEditName, Converter={StaticResource BooleanNegatedConverter}}"
+                        Style="{StaticResource PoppinsRegularBlack20}"
+                        Text="{Binding DeviceName}" />-->
+                    <Entry
+                        Focused="Entry_Focused"
+                        HorizontalOptions="FillAndExpand"
+                        IsEnabled="{Binding IsEditName}"
+                        Style="{StaticResource PoppinsRegularBlack17}"
+                        Text="{Binding Device.DeviceName}"
+                        Unfocused="Entry_Unfocused">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroupList>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Focused">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="White" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="{StaticResource ColorGray}" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateGroupList>
+                        </VisualStateManager.VisualStateGroups>
+                    </Entry>
+                    <Image
+                        HorizontalOptions="End"
+                        Source="edit_icon.png"
+                        WidthRequest="20">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding EditCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+            </Frame>
+            <Label
+                Grid.Row="2"
+                Grid.Column="2"
+                Style="{StaticResource PoppinsRegularBlack17}"
+                Text="{Binding Device.NoOfCycles}"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="3"
+                Grid.Column="2"
+                Style="{StaticResource PoppinsRegularBlack17}"
+                Text="{Binding Device.Version}"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="4"
+                Grid.Column="2"
+                Style="{StaticResource PoppinsRegularBlack17}"
+                Text="{Binding Device.DeviceId}"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="5"
+                Grid.Column="2"
+                Style="{StaticResource PoppinsRegularBlack17}"
+                Text="{Binding Device.SNCode}"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="6"
+                Grid.Column="2"
+                Style="{StaticResource PoppinsRegularBlack17}"
+                Text="{Binding Device.Protocol}"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="7"
+                Grid.Column="2"
+                Style="{StaticResource PoppinsRegularBlack17}"
+                Text="{Binding Device.ProtocolVersion}"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="8"
+                Grid.Column="2"
+                Style="{StaticResource PoppinsRegularBlack17}"
+                Text="{Binding Device.Status}"
+                TextColor="{Binding Device.StatusColor}"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="9"
+                Grid.Column="2"
+                Style="{StaticResource PoppinsRegularBlack17}"
+                Text="{Binding Device.LastUpdated, StringFormat='{0:dd-MM-yyyy, HH:mm:ss}'}"
+                VerticalOptions="Center" />
+
+        </Grid>
+        <customViews:BottomTabView BindingContext="{Binding BottomTabViewModel}" VerticalOptions="End"/>
+    </StackLayout>
+</ContentPage>

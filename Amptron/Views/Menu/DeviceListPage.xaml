@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Amptron.Views.Menu.DeviceListPage"
+             xmlns:i18n="clr-namespace:Amptron.i18n"
+             xmlns:customviews="clr-namespace:Amptron.Views.CustomViews"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:menuViewModels="clr-namespace:Amptron.ViewModels.Menu"
+             x:DataType="menuViewModels:DeviceListViewModel"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             Title="DeviceListPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <toolkit:InvertedBoolConverter x:Key="InvertedBoolConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout Padding="0,40,0,0" Orientation="Vertical" VerticalOptions="FillAndExpand">
+        <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand" Padding="20,0">
+            <StackLayout Orientation="Horizontal">
+                <Label
+                    HorizontalOptions="FillAndExpand"
+                    Style="{StaticResource PoppinsSemiBoldBlack20}"
+                    Text="{i18n:Translate DeviceList}"
+                    TextTransform="Uppercase" />
+                <Image
+                    HeightRequest="35"
+                    HorizontalOptions="End"
+                    Source="search_device.png"
+                    WidthRequest="37" />
+            </StackLayout>
+            <ScrollView Orientation="Vertical" VerticalOptions="StartAndExpand">
+                <Grid>
+                    <StackLayout
+                        BindableLayout.ItemsSource="{Binding Devices}"
+                        IsVisible="{Binding IsDevicesEmpty, Converter={StaticResource InvertedBoolConverter}}"
+                        Orientation="Vertical"
+                        Spacing="10"
+                        VerticalOptions="Start">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <customviews:DeviceItemView Device="{Binding .}" />
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
+                    <StackLayout
+                        Orientation="Vertical"
+                        Spacing="20"
+                        IsVisible="{Binding IsDevicesEmpty}"
+                        VerticalOptions="Center">
+                        <Image
+                            HeightRequest="154"
+                            Source="car_battery.png"
+                            WidthRequest="154" />
+                        <Label
+                            HorizontalOptions="Center"
+                            Style="{StaticResource PoppinsRegularBlack20}"
+                            Text="{i18n:Translate NoDevicesFound}" />
+                        <Label
+                            HorizontalOptions="Center"
+                            Style="{StaticResource PoppinsRegularBlack16}"
+                            Text="{i18n:Translate NoDevicesFoundInfo}" />
+
+                    </StackLayout>
+                </Grid>
+            </ScrollView>
+
+            <Button
+                Margin="0,20,0,0"
+                Command="{Binding AddDeviceCommand}"
+                Style="{StaticResource ButtonLightBlue}"
+                Text="{i18n:Translate AddDevice}"
+                VerticalOptions="StartAndExpand" />
+
+        </StackLayout>
+        
+        <customviews:BottomTabView BindingContext="{Binding BottomTabViewModel}" VerticalOptions="End"/>
+    </StackLayout>
+</ContentPage>

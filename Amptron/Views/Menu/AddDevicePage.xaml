@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Amptron.Views.Menu.AddDevicePage"
+             xmlns:customViews="clr-namespace:Amptron.Views.CustomViews"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:i18n="clr-namespace:Amptron.i18n"
+             xmlns:controls="clr-namespace:Amptron.Controls"
+             xmlns:models="clr-namespace:Amptron.Models"
+             xmlns:customviews="clr-namespace:Amptron.Views.CustomViews"
+             xmlns:viewModels="clr-namespace:Amptron.ViewModels.Menu"
+             x:DataType="viewModels:AddDeviceViewModel"
+             Title="AddDevicePage">
+    <StackLayout Padding="20,40,20,0" Orientation="Vertical">
+        <Grid ColumnDefinitions="Auto,*,Auto" HorizontalOptions="FillAndExpand" Margin="0,0,0,20">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Center" Spacing="5" WidthRequest="20">
+                <Image
+                    Grid.Column="0"
+                    HorizontalOptions="Start"
+                    Source="back"
+                    VerticalOptions="Center" />
+                <Label
+                    Style="{StaticResource PoppinsRegularBlack16}"
+                    Text="{i18n:Translate Back}"
+                    VerticalOptions="Center" />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NavigateBackCommand}" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+            <StackLayout Grid.Column="1" Orientation="Horizontal" Spacing="5" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                <Label
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="Center"
+                    Style="{StaticResource PoppinsSemiBoldBlack20}"
+                    Text="{i18n:Translate AddDevice}"
+                    TextTransform="Uppercase" />
+                <Image
+                    HeightRequest="25"
+                    Source="search_device"
+                    WidthRequest="25">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ScanDeviceCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+            <Image
+                HeightRequest="20"
+                Source="refresh"
+                Grid.Column="2"
+                HorizontalOptions="End"
+                WidthRequest="20">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ScanDeviceCommand}" />
+                </Image.GestureRecognizers>
+            </Image>
+        </Grid>
+        <Frame Padding="10,10">
+            <StackLayout Orientation="Horizontal">
+                <controls:BorderlessEntry
+                    HorizontalOptions="FillAndExpand"
+                    Placeholder="{i18n:Translate SearchByNameOrId}"
+                    PlaceholderColor="{StaticResource ColorDimGray}"
+                    Text="{Binding SearchText}"
+                    TextChanged="BorderlessEntry_TextChanged" />
+                <Image
+                    HeightRequest="35"
+                    Source="search_gray.png"
+                    WidthRequest="37" />
+            </StackLayout>
+        </Frame>
+        <Grid>
+            <StackLayout
+                Margin="0,20,0,0"
+                BindableLayout.ItemsSource="{Binding Devices}"
+                HorizontalOptions="FillAndExpand"
+                Spacing="20">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="models:BluetoothDevice">
+                        <customviews:DeviceView Device="{Binding .}" StatusColor="Green">
+                            <customviews:DeviceView.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding BindingContext.SelectDeviceCommand, Source={x:Reference addDeviceView}}" CommandParameter="{Binding .}" />
+                            </customviews:DeviceView.GestureRecognizers>
+                        </customviews:DeviceView>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+            <ActivityIndicator
+                x:Name="IsBusyIndicator"
+                IsVisible="{Binding IsBusy}"
+                Scale="0.3" />
+        </Grid>
+            <Button
+            Margin="36,10"
+            Command="{Binding AddCommand}"
+            Style="{StaticResource ButtonLightBlue}"
+            Text="{i18n:Translate Add}"
+            TextTransform="Uppercase"
+            VerticalOptions="StartAndExpand" />
+        <!--<customViews:BottomTabView BindingContext="{Binding BottomTabViewModel}" VerticalOptions="End"/>-->
+    </StackLayout>
+</ContentPage>

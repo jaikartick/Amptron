@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Amptron.Controls"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Name="webEntry"
+             x:Class="Amptron.Views.CustomViews.WebEntry">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <toolkit:IsStringNullOrEmptyConverter x:Key="IsStringNullOrEmptyConverter" />
+            <toolkit:IsStringNotNullOrEmptyConverter x:Key="IsStringNotNullOrEmptyConverter" />
+            <toolkit:InvertedBoolConverter x:Key="InvertedBoolConverter" />
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Frame
+            Padding="0"
+            BackgroundColor="Transparent"
+            BorderColor="{StaticResource ColorDimGray}"
+            CornerRadius="5"
+            HasShadow="False"
+            HeightRequest="50"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            <StackLayout
+                Padding="5"
+                HorizontalOptions="FillAndExpand"
+                Orientation="Horizontal">
+                <Image
+                    x:Name="icon"
+                    HeightRequest="16"
+                    HorizontalOptions="Center"
+                    IsVisible="{Binding Source={x:Reference webEntry}, Path=ImageSource, Converter={StaticResource IsStringNotNullOrEmptyConverter}}"
+                    Source="{Binding Source={x:Reference webEntry}, Path=ImageSource}"
+                    VerticalOptions="Center"
+                    WidthRequest="30" />
+                <Label
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Start"
+                    IsVisible="{Binding Source={x:Reference webEntry}, Path=AddOnFieldValue, Converter={StaticResource IsStringNotNullOrEmptyConverter}}"
+                    Text="{Binding Source={x:Reference webEntry}, Path=AddOnFieldValue}"
+                    VerticalOptions="Center" />
+                <controls:BorderlessEntry
+                    Margin="10,10,0,0"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="FillAndExpand"
+                    IsEnabled="{Binding Source={x:Reference webEntry}, Path=IsEnabled}"
+                    IsPassword="{Binding Source={x:Reference webEntry}, Path=HideValue}"
+                    Keyboard="{Binding Source={x:Reference webEntry}, Path=Keyboard}"
+                    MaxLength="{Binding Source={x:Reference webEntry}, Path=MaxLength}"
+                    Placeholder="{Binding Source={x:Reference webEntry}, Path=Placeholder}"
+                    Text="{Binding Source={x:Reference webEntry}, Path=Text}"
+                    TextChanged="BorderlessEntry_TextChanged"
+                    TextColor="{StaticResource ColorBlack}"
+                    VerticalOptions="FillAndExpand" />
+                <Image
+                    x:Name="showPasswordIcon"
+                    Margin="0,0,8,0"
+                    HeightRequest="16"
+                    HorizontalOptions="End"
+                    IsVisible="{Binding Source={x:Reference webEntry}, Path=IsPassword}"
+                    Source="ic_show_password"
+                    VerticalOptions="Center"
+                    WidthRequest="25">
+                    <Image.Triggers>
+                        <DataTrigger
+                            Binding="{Binding Source={x:Reference webEntry}, Path=HideValue}"
+                            TargetType="Image"
+                            Value="True">
+                            <Setter Property="Source" Value="ic_show_password" />
+                            <Setter Property="WidthRequest" Value="25" />
+                            <Setter Property="HeightRequest" Value="16" />
+                        </DataTrigger>
+                        <DataTrigger
+                            Binding="{Binding Source={x:Reference webEntry}, Path=HideValue}"
+                            TargetType="Image"
+                            Value="False">
+                            <Setter Property="Source" Value="ic_hide_password" />
+                            <Setter Property="WidthRequest" Value="25" />
+                            <Setter Property="HeightRequest" Value="21" />
+                        </DataTrigger>
+                    </Image.Triggers>
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ShowOrHideValue_Tapped" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+        </Frame>
+        <Label
+            Margin="15,-6,0,0"
+            Padding="3,0,2,0"
+            FontSize="Micro"
+            HeightRequest="12"
+            HorizontalOptions="Start"
+            Opacity="1"
+            BackgroundColor="White"
+            Text="{Binding Source={x:Reference webEntry}, Path=FieldName}"
+            TextColor="{Binding Source={x:Reference webEntry}, Path=FieldNameColor}"
+            VerticalOptions="StartAndExpand" />
+    </Grid>
+</ContentView>
+

@@ -1,7 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net7.0-android;net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks>net7.0-android;</TargetFrameworks>
+		<!--<TargetFrameworks>net7.0-android;net7.0-ios;net7.0-maccatalyst</TargetFrameworks>-->
 		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
@@ -35,16 +36,9 @@
 	</PropertyGroup>
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#FFFFFF" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
-
-		<!-- Images -->
-		<MauiImage Include="Resources\Images\*" />
-		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
-
-		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
@@ -53,6 +47,229 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+		<PackageReference Include="PropertyChanged.Fody" Version="4.1.0" />
+		<PackageReference Include="Plugin.BLE" Version="3.0.0" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="5.3.0" />
+		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.2.0" />
+		<PackageReference Include="Mopups" Version="1.2.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="epj.Expander.Maui" Version="1.0.2" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Remove="Resources\Fonts\Poppins-Bold.ttf" />
+	  <None Remove="Resources\Fonts\Poppins-Medium.ttf" />
+	  <None Remove="Resources\Fonts\Poppins-Regular.ttf" />
+	  <None Remove="Resources\Fonts\Poppins-SemiBold.ttf" />
+	  <None Remove="Resources\Images\about.svg" />
+	  <None Remove="Resources\Images\aboutus.png" />
+	  <None Remove="Resources\Images\amptron_company.png" />
+	  <None Remove="Resources\Images\arrowdown.png" />
+	  <None Remove="Resources\Images\arrowup.png" />
+	  <None Remove="Resources\Images\back.png" />
+	  <None Remove="Resources\Images\battery_image.png" />
+	  <None Remove="Resources\Images\bluetooth.png" />
+	  <None Remove="Resources\Images\call.png" />
+	  <None Remove="Resources\Images\car_battery.png" />
+	  <None Remove="Resources\Images\chevron_left.png" />
+	  <None Remove="Resources\Images\chevron_right.png" />
+	  <None Remove="Resources\Images\contact_icon.png" />
+	  <None Remove="Resources\Images\currenticon.png" />
+	  <None Remove="Resources\Images\dashboard.png" />
+	  <None Remove="Resources\Images\default_profile.png" />
+	  <None Remove="Resources\Images\detailedview.png" />
+	  <None Remove="Resources\Images\deviceinfo.png" />
+	  <None Remove="Resources\Images\discharge_current.png" />
+	  <None Remove="Resources\Images\edit_icon.png" />
+	  <None Remove="Resources\Images\exclamation.png" />
+	  <None Remove="Resources\Images\green_tick.png" />
+	  <None Remove="Resources\Images\ic_hide_password.svg" />
+	  <None Remove="Resources\Images\ic_show_password.svg" />
+	  <None Remove="Resources\Images\mail.png" />
+	  <None Remove="Resources\Images\nav_logo.png" />
+	  <None Remove="Resources\Images\onboarding1.png" />
+	  <None Remove="Resources\Images\onboarding2.png" />
+	  <None Remove="Resources\Images\onboarding3.png" />
+	  <None Remove="Resources\Images\powericon.png" />
+	  <None Remove="Resources\Images\profile_photo.png" />
+	  <None Remove="Resources\Images\profile.png" />
+	  <None Remove="Resources\Images\question_mark.png" />
+	  <None Remove="Resources\Images\refresh.png" />
+	  <None Remove="Resources\Images\search_device.png" />
+	  <None Remove="Resources\Images\search_gray.png" />
+	  <None Remove="Resources\Images\signal_green.png" />
+	  <None Remove="Resources\Images\signal_red.png" />
+	  <None Remove="Resources\Images\soc.png" />
+	  <None Remove="Resources\Images\status.png" />
+	  <None Remove="Resources\Images\statusicon.png" />
+	  <None Remove="Resources\Images\switch_off.png" />
+	  <None Remove="Resources\Images\switch_on.png" />
+	  <None Remove="Resources\Images\voltage.png" />
+	  <None Remove="Resources\Images\voltageicon.png" />
+	  <None Remove="Resources\Images\warning_icon.png" />
+	  <None Remove="Models\" />
+	  <None Remove="Resources\.DS_Store" />
+	  <None Remove="Resources\Images\.DS_Store" />
+	  <None Remove="Helpers\" />
+	  <None Remove="Views\" />
+	  <None Remove="Services\" />
+	  <None Remove="Services\Interfaces\" />
+	  <None Remove="ViewModels\" />
+	  <None Remove="Controls\" />
+	  <None Remove="Platforms\iOS\Services\" />
+	  <None Remove="Resources\Images\amptronLogoLarge.svg" />
+	  <None Remove="Resources\Splash\amptronLogoLarge.svg" />
+	  <None Remove="Resources\Splash\amptron_logo_large.svg" />
+	  <None Remove="Views\Onboarding\" />
+	  <None Remove="i18n\" />
+	  <None Remove="Resources\Images\amptronlogolarge.svg" />
+	  <None Remove="Views\CustomViews\" />
+	  <None Remove="Platforms\iOS\Renderers\" />
+	  <None Remove="Platforms\Android\Renderers\" />
+	  <None Remove="Views\Menu\" />
+	  <None Remove="ViewModels\Menu\" />
+	  <None Remove="ViewModels\CustomViews\" />
+	  <None Remove="Resources\Images\addcircle.png" />
+	  <None Remove="Resources\Images\refresh.svg" />
+	</ItemGroup>
+	<ItemGroup>
+	  <BundleResource Include="Resources\Fonts\Poppins-Bold.ttf" />
+	  <BundleResource Include="Resources\Fonts\Poppins-Medium.ttf" />
+	  <BundleResource Include="Resources\Fonts\Poppins-Regular.ttf" />
+	  <BundleResource Include="Resources\Fonts\Poppins-SemiBold.ttf" />
+	  <BundleResource Include="Resources\Images\about.svg" />
+	  <BundleResource Include="Resources\Images\about.svg" />
+	  <BundleResource Include="Resources\Images\aboutus.png" />
+	  <BundleResource Include="Resources\Images\amptron_company.png" />
+	  <BundleResource Include="Resources\Images\arrowdown.png" />
+	  <BundleResource Include="Resources\Images\arrowup.png" />
+	  <BundleResource Include="Resources\Images\back.png" />
+	  <BundleResource Include="Resources\Images\battery_image.png" />
+	  <BundleResource Include="Resources\Images\bluetooth.png" />
+	  <BundleResource Include="Resources\Images\bluetooth.png" />
+	  <BundleResource Include="Resources\Images\call.png" />
+	  <BundleResource Include="Resources\Images\car_battery.png" />
+	  <BundleResource Include="Resources\Images\car_battery.png" />
+	  <BundleResource Include="Resources\Images\chevron_left.png" />
+	  <BundleResource Include="Resources\Images\chevron_right.png" />
+	  <BundleResource Include="Resources\Images\contact_icon.png" />
+	  <BundleResource Include="Resources\Images\currenticon.png" />
+	  <BundleResource Include="Resources\Images\dashboard.png" />
+	  <BundleResource Include="Resources\Images\default_profile.png" />
+	  <BundleResource Include="Resources\Images\default_profile.png" />
+	  <BundleResource Include="Resources\Images\detailedview.png" />
+	  <BundleResource Include="Resources\Images\deviceinfo.png" />
+	  <BundleResource Include="Resources\Images\discharge_current.png" />
+	  <BundleResource Include="Resources\Images\discharge_current.png" />
+	  <BundleResource Include="Resources\Images\edit_icon.png" />
+	  <BundleResource Include="Resources\Images\edit_icon.png" />
+	  <BundleResource Include="Resources\Images\exclamation.png" />
+	  <BundleResource Include="Resources\Images\green_tick.png" />
+	  <BundleResource Include="Resources\Images\green_tick.png" />
+	  <BundleResource Include="Resources\Images\ic_hide_password.svg" />
+	  <BundleResource Include="Resources\Images\ic_hide_password.svg" />
+	  <BundleResource Include="Resources\Images\ic_show_password.svg" />
+	  <BundleResource Include="Resources\Images\ic_show_password.svg" />
+	  <BundleResource Include="Resources\Images\mail.png" />
+	  <BundleResource Include="Resources\Images\mail.png" />
+	  <BundleResource Include="Resources\Images\nav_logo.png" />
+	  <BundleResource Include="Resources\Images\onboarding1.png" />
+	  <BundleResource Include="Resources\Images\onboarding2.png" />
+	  <BundleResource Include="Resources\Images\onboarding3.png" />
+	  <BundleResource Include="Resources\Images\powericon.png" />
+	  <BundleResource Include="Resources\Images\profile_photo.png" />
+	  <BundleResource Include="Resources\Images\profile_photo.png" />
+	  <BundleResource Include="Resources\Images\profile.png" />
+	  <BundleResource Include="Resources\Images\question_mark.png" />
+	  <BundleResource Include="Resources\Images\refresh.png" />
+	  <BundleResource Include="Resources\Images\refresh.png" />
+	  <BundleResource Include="Resources\Images\search_device.png" />
+	  <BundleResource Include="Resources\Images\search_gray.png" />
+	  <BundleResource Include="Resources\Images\signal_green.png" />
+	  <BundleResource Include="Resources\Images\signal_red.png" />
+	  <BundleResource Include="Resources\Images\soc.png" />
+	  <BundleResource Include="Resources\Images\status.png" />
+	  <BundleResource Include="Resources\Images\status.png" />
+	  <BundleResource Include="Resources\Images\statusicon.png" />
+	  <BundleResource Include="Resources\Images\switch_off.png" />
+	  <BundleResource Include="Resources\Images\switch_on.png" />
+	  <BundleResource Include="Resources\Images\voltage.png" />
+	  <BundleResource Include="Resources\Images\voltage.png" />
+	  <BundleResource Include="Resources\Images\voltageicon.png" />
+	  <BundleResource Include="Resources\Images\warning_icon.png" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Remove="Resources\Raw\AppResources.Designer.cs" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Update="Resources\AppResources.Designer.cs">
+			<DependentUpon>AppResources.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Models\" />
+	  <Folder Include="Helpers\" />
+	  <Folder Include="Views\" />
+	  <Folder Include="Services\" />
+	  <Folder Include="Services\Interfaces\" />
+	  <Folder Include="ViewModels\" />
+	  <Folder Include="Controls\" />
+	  <Folder Include="Platforms\iOS\Services\" />
+	  <Folder Include="Views\Onboarding\" />
+	  <Folder Include="i18n\" />
+	  <Folder Include="Views\CustomViews\" />
+	  <Folder Include="Platforms\iOS\Renderers\" />
+	  <Folder Include="Platforms\Android\Renderers\" />
+	  <Folder Include="Views\Menu\" />
+	  <Folder Include="ViewModels\Menu\" />
+	  <Folder Include="ViewModels\CustomViews\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <MauiAsset Remove="Resources\Raw\AppResources.resx" />
+	  <MauiAsset Remove="Resources\Raw\AppResources.Designer.cs" />
+	</ItemGroup>
+	<ItemGroup>
+	  <MauiSplashScreen Include="Resources\Splash\amptron_logo_large.svg" Color="#FFFFFF" BaseSize="128,128" />
+	</ItemGroup>
+	<ItemGroup>
+	  <MauiImage Include="Resources\Images\amptronlogolarge.svg" />
+	  <MauiImage Include="Resources\Images\nav_logo.png" />
+	  <MauiImage Include="Resources\Images\onboarding1.png" />
+	  <MauiImage Include="Resources\Images\onboarding2.png" />
+	  <MauiImage Include="Resources\Images\onboarding3.png" />
+	  <MauiImage Include="Resources\Images\exclamation.png" />
+	  <MauiImage Include="Resources\Images\call.png" />
+	  <MauiImage Include="Resources\Images\profile.png" />
+	  <MauiImage Include="Resources\Images\arrowdown.png" />
+	  <MauiImage Include="Resources\Images\arrowup.png" />
+	  <MauiImage Include="Resources\Images\back.png" />
+	  <MauiImage Include="Resources\Images\dashboard.png" />
+	  <MauiImage Include="Resources\Images\detailedview.png" />
+	  <MauiImage Include="Resources\Images\deviceinfo.png" />
+	  <MauiImage Include="Resources\Images\aboutus.png" />
+	  <MauiImage Include="Resources\Images\addcircle.png" />
+	  <MauiImage Include="Resources\Images\question_mark.png" />
+	  <MauiImage Include="Resources\Images\contact_icon.png" />
+	  <MauiImage Include="Resources\Images\warning_icon.png" />
+	  <MauiImage Include="Resources\Images\currenticon.png" />
+	  <MauiImage Include="Resources\Images\voltageicon.png" />
+	  <MauiImage Include="Resources\Images\statusicon.png" />
+	  <MauiImage Include="Resources\Images\soc.png" />
+	  <MauiImage Include="Resources\Images\powericon.png" />
+	  <MauiImage Include="Resources\Images\amptron_company.png" />
+	  <MauiImage Include="Resources\Images\battery_image.png" />
+	  <MauiImage Include="Resources\Images\switch_off.png" />
+	  <MauiImage Include="Resources\Images\switch_on.png" />
+	  <MauiImage Include="Resources\Images\signal_red.png" />
+	  <MauiImage Include="Resources\Images\signal_green.png" />
+	  <MauiImage Include="Resources\Images\search_gray.png" />
+	  <MauiImage Include="Resources\Images\search_device.png" />
+	  <MauiImage Include="Resources\Images\chevron_right.png" />
+	  <MauiImage Include="Resources\Images\chevron_left.png" />
+	  <MauiImage Include="Resources\Images\refresh.svg" />
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Include="Resources\Raw\AppResources.Designer.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+	</ItemGroup>
 </Project>

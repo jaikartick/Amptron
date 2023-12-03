@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Amptron.Views.Onboarding.OnboardingPage"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:i18n="clr-namespace:Amptron.i18n"
+             xmlns:controls="clr-namespace:Amptron.Controls"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             ios:Page.UseSafeArea="False"
+             BackgroundColor="White"
+             xmlns:viewModels="clr-namespace:Amptron.ViewModels"
+             x:DataType="viewModels:OnboardingViewModel"
+             Title="OnboardingPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <controls:CarouselTemplateSelector x:Key="CarouselTemplateSelector"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid
+        Padding="0,40,0,0"
+        RowDefinitions="Auto, *, Auto"
+        VerticalOptions="FillAndExpand">
+        <VerticalStackLayout VerticalOptions="FillAndExpand">
+            <Image Source="nav_logo" />
+        </VerticalStackLayout>
+        <VerticalStackLayout Grid.Row="1">
+            <CarouselView
+                x:Name="carouselView"
+                HorizontalScrollBarVisibility="Never"
+                MaximumHeightRequest="400"
+                IndicatorView="{x:Reference indicatorView}"
+                ItemTemplate="{StaticResource CarouselTemplateSelector}"
+                ItemsSource="{Binding CarouselItems}"
+                VerticalOptions="Center" />
+            <IndicatorView
+                x:Name="indicatorView"
+                Margin="0,0,0,10"
+                HorizontalOptions="CenterAndExpand"
+                IndicatorColor="{StaticResource ColorOffWhite}"
+                IndicatorSize="8"
+                SelectedIndicatorColor="{StaticResource ColorDarkGray}"
+                VerticalOptions="Center" />
+            <Button
+                Margin="37,10"
+                Command="{Binding NavigateToHomePageCommand}"
+                Style="{StaticResource ButtonLightBlue}"
+                Text="{i18n:Translate GetStarted}"
+                VerticalOptions="StartAndExpand" />
+        </VerticalStackLayout>
+        <controls:CustomAmptronFrame
+            Grid.Row="2"
+            Margin="0,30,0,0"
+            Padding="0"
+            HasShadow="False"
+            HeightRequest="50"
+            VerticalOptions="End">
+            <Grid
+                BackgroundColor="{StaticResource ColorLightBlue}"
+                ColumnDefinitions="0.5*, 0.5*"
+                VerticalOptions="FillAndExpand">
+                <Image
+                    Grid.Column="0"
+                    HeightRequest="35"
+                    HorizontalOptions="Center"
+                    Source="exclamation"
+                    VerticalOptions="Center"
+                    WidthRequest="35">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding NavigateToFaqCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image
+                    Grid.Column="1"
+                    HorizontalOptions="Center"
+                    Source="call"
+                    VerticalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding NavigateToContactUsCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+        </controls:CustomAmptronFrame>
+    </Grid>
+</ContentPage>
