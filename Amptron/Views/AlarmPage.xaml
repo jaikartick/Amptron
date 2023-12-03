@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Amptron.Views.AlarmPage"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             ios:Page.UseSafeArea="False"
+             BackgroundColor="White"
+             xmlns:i18n="clr-namespace:Amptron.i18n"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:customviews="clr-namespace:Amptron.Views.CustomViews"
+             Title="AlarmPage">
+    <StackLayout
+        Padding="0,40,0,0"
+        Orientation="Vertical"
+        VerticalOptions="FillAndExpand">
+        <Grid
+            Padding="10,0"
+            ColumnDefinitions="*"
+            VerticalOptions="Center">
+            <StackLayout Orientation="Horizontal" VerticalOptions="End" Spacing="5">
+                <Image
+                    Grid.Column="0"
+                    HorizontalOptions="Start"
+                    Source="back"
+                    VerticalOptions="Center" />
+                <Label
+                    Style="{StaticResource PoppinsRegularBlack16}"
+                    Text="{i18n:Translate Back}"
+                    VerticalOptions="Center" />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NavigateBackCommand}" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+            <Label
+                Grid.Column="0"
+                HorizontalOptions="Center"
+                Text="{i18n:Translate AlarmPage}"
+                VerticalOptions="Center" />
+        </Grid>
+        <StackLayout
+            Margin="32,30,32,0"
+            Orientation="Vertical"
+            Spacing="20">
+            <customviews:AlarmView
+                Name="{i18n:Translate ProtectionAlarms}"
+                AlarmColor="{StaticResource ColorRed}"
+                IsSelected="True" />
+            <customviews:AlarmView
+                Name="{i18n:Translate TemperatureAlarms}"
+                AlarmColor="{StaticResource ColorYellow}"
+                IsSelected="False" />
+            <customviews:AlarmView
+                Name="{i18n:Translate ProtectionAlarms}"
+                AlarmColor="{StaticResource ColorGreen}"
+                IsSelected="True" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

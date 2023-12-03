@@ -41,4 +41,19 @@
     <Color x:Key="Blue200Accent">#72ACF1</Color>
     <Color x:Key="Blue300Accent">#A7CBF6</Color>
 
+    <Color x:Key="ColorLightBlue">#0A7CBC</Color>
+    <Color x:Key="ColorGray">#A5A5A5</Color>
+    <Color x:Key="ColorDarkGray">#666666</Color>
+    <Color x:Key="ColorOffWhite">#F8F0E3</Color>
+    <Color x:Key="ColorLightSkyGreen">#C1D5D6</Color>
+    <Color x:Key="ColorYellow">#FC950C</Color>
+    <Color x:Key="ColorDarkBlack">#101010</Color>
+    <Color x:Key="ColorDimGray">#707070</Color>
+    <Color x:Key="ColorRed">#FE1A25</Color>
+    <Color x:Key="ColorGreen">#58B05C</Color>
+    <Color x:Key="ColorLightGreen">#6DA1A5</Color>
+    <Color x:Key="ColorBgRed">#FFF1EF</Color>
+    <Color x:Key="ColorBgLightGreen">#D9E6E7</Color>
+    <Color x:Key="ColorBorderGray">#747474</Color>
+    <Color x:Key="BorderColor">#C7CECB</Color>
 </ResourceDictionary>

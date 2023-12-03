@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Amptron.Views.SubmitQuestionPage"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             xmlns:customviews="clr-namespace:Amptron.Views.CustomViews"
+             ios:Page.UseSafeArea="False"
+             BackgroundColor="White"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:i18n="clr-namespace:Amptron.i18n"
+             Title="SubmitQuestionPage">
+    <StackLayout
+        Padding="0,40,0,0"
+        Orientation="Vertical"
+        VerticalOptions="FillAndExpand">
+        <Grid
+            Padding="10,0"
+            ColumnDefinitions="*"
+            VerticalOptions="Start">
+            <StackLayout Orientation="Horizontal" VerticalOptions="End" Spacing="5">
+                <Image
+                    Grid.Column="0"
+                    HorizontalOptions="Start"
+                    Source="back.png"
+                    VerticalOptions="Center" />
+                <Label
+                    Style="{StaticResource PoppinsRegularBlack16}"
+                    Text="{i18n:Translate Back}"
+                    VerticalOptions="Center" />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NavigateBackCommand}" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+            <Image
+                Grid.Column="0"
+                HorizontalOptions="Center"
+                Source="nav_logo.png"
+                VerticalOptions="Center" />
+        </Grid>
+
+        <StackLayout
+            Margin="36,10"
+            Orientation="Vertical"
+            VerticalOptions="StartAndExpand">
+            <customviews:WebEntry
+                Margin="0,20,0,10"
+                FieldName="{i18n:Translate Name}"
+                FieldNameColor="{StaticResource ColorLightBlue}"
+                HeightRequest="50"
+                IsPassword="False"
+                Keyboard="Text"
+                Text="{Binding Name}" />
+            <customviews:WebEntry
+                Margin="0,20,0,10"
+                FieldName="{i18n:Translate Email}"
+                FieldNameColor="{StaticResource ColorLightBlue}"
+                HeightRequest="50"
+                IsPassword="False"
+                Keyboard="Email"
+                Text="{Binding Email}" />
+            <customviews:WebEntry
+                Margin="0,20,0,10"
+                FieldName="{i18n:Translate Subject}"
+                FieldNameColor="{StaticResource ColorLightBlue}"
+                HeightRequest="50"
+                HideValue="False"
+                IsPassword="False"
+                Keyboard="Text"
+                Text="{Binding Subject}" />
+            <customviews:WebEntry
+                Margin="0,20,0,10"
+                FieldName="{i18n:Translate Text}"
+                FieldNameColor="{StaticResource ColorLightBlue}"
+                HeightRequest="50"
+                HideValue="False"
+                IsPassword="False"
+                Keyboard="Text"
+                MaxLength="300"
+                Text="{Binding Text}" />
+            <Button
+                Margin="20,10"
+                Command="{Binding SubmitQuestionCommand}"
+                FontSize="16"
+                Style="{StaticResource ButtonLightBlue}"
+                Text="{i18n:Translate SubmitYourQuestion}"
+                VerticalOptions="Start" />
+        </StackLayout>
+        <!--<Frame
+            Margin="0,20,0,0"
+            Padding="0"
+            HasShadow="False"
+            HeightRequest="50"
+            VerticalOptions="End">
+            <Grid
+                BackgroundColor="{StaticResource ColorLightBlue}"
+                ColumnDefinitions="0.5*, 0.5*"
+                HeightRequest="73"
+                VerticalOptions="FillAndExpand">
+                <Image
+                    Grid.Column="0"
+                    HeightRequest="35"
+                    HorizontalOptions="Center"
+                    Source="exclamation"
+                    VerticalOptions="Center"
+                    WidthRequest="35">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding FAQCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image
+                    Grid.Column="1"
+                    HorizontalOptions="Center"
+                    Source="call"
+                    VerticalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ContactUsCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+        </Frame>-->
+    </StackLayout>
+</ContentPage>

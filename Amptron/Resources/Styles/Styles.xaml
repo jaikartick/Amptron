@@ -402,5 +402,615 @@
         <Setter Property="SelectedTabColor" Value="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource Gray200}}" />
     </Style>
 
+
+
+    <!--  PoppinsRegular  -->
+    <Style x:Key="PoppinsRegularLightGreen11" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsRegular" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=11, Android=11}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorLightGreen}" />
+    </Style>
+
+    <Style x:Key="PoppinsRegularLightGreen12" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsRegular" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=12, Android=12}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorLightGreen}" />
+    </Style>
+
+    <Style x:Key="PoppinsRegularGray9" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsRegular" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=9, Android=9}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorGray}" />
+    </Style>
+
+    <Style x:Key="PoppinsRegularGray12" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsRegular" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=12, Android=12}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorGray}" />
+    </Style>
+
+    <Style x:Key="PoppinsRegularGray13" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsRegular" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=13, Android=13}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorGray}" />
+    </Style>
+
+    <Style x:Key="PoppinsRegularGray10" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsRegular" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=10, Android=10}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorGray}" />
+    </Style>
+
+    <Style x:Key="PoppinsRegularGreen14" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsRegular" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=14, Android=14}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorGreen}" />
+    </Style>
+
+
+    <Style x:Key="PoppinsRegularGreen12" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsRegular" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=12, Android=12}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorGreen}" />
+    </Style>
+
+    <Style x:Key="PoppinsRegularGreen10" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsRegular" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=10, Android=10}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorGreen}" />
+    </Style>
+
+    <Style x:Key="PoppinsRegularGreen11" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsRegular" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=11, Android=11}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorGreen}" />
+    </Style>
+
+    <Style x:Key="PoppinsRegularBlack12" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsRegular" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=12, Android=12}" />
+        <Setter Property="TextColor" Value="Black" />
+    </Style>
+    <Style x:Key="PoppinsRegularBlack14" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsRegular" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=14, Android=14}" />
+        <Setter Property="TextColor" Value="Black" />
+    </Style>
+
+    <Style x:Key="PoppinsRegularDarkBlack12" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsRegular" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=12, Android=12}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorDarkBlack}" />
+    </Style>
+
+    <Style x:Key="PoppinsRegularDarkBlack14" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsRegular" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=14, Android=14}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorDarkBlack}" />
+    </Style>
+
+    <Style x:Key="PoppinsRegularDarkBlack16" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsRegular" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=16, Android=16}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorDarkBlack}" />
+    </Style>
+
+    <Style x:Key="PoppinsRegularDarkGray12" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsRegular" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=12, Android=12}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorDarkBlack}" />
+    </Style>
+
+    <Style x:Key="PoppinsRegularDarkGray14" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsRegular" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=14, Android=14}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorDarkBlack}" />
+    </Style>
+
+    <Style x:Key="PoppinsRegularWhite12" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsRegular" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=12, Android=12}" />
+        <Setter Property="TextColor" Value="White" />
+    </Style>
+    <Style x:Key="PoppinsRegularDimGray12" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsRegular" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=12, Android=12}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorDimGray}" />
+    </Style>
+    <Style x:Key="PoppinsRegularDimGray14" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsRegular" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=14, Android=14}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorDimGray}" />
+    </Style>
+    <Style x:Key="PoppinsRegularDimGray16" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsRegular" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=16, Android=16}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorDimGray}" />
+    </Style>
+    <Style x:Key="PoppinsRegularDimGray17" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsRegular" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=17, Android=17}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorDimGray}" />
+    </Style>
+    <Style x:Key="PoppinsRegularDimGray20" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsRegular" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=20, Android=20}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorDimGray}" />
+    </Style>
+    <Style x:Key="PoppinsRegularDimGray32" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsRegular" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=32, Android=32}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorDimGray}" />
+    </Style>
+    <Style x:Key="PoppinsRegularLightBlue20" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsRegular" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=20, Android=20}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorLightBlue}" />
+    </Style>
+
+
+    <!--  PoppinsMedium  -->
+    <Style x:Key="PoppinsMediumGreen12" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsMedium" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=12, Android=12}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorGreen}" />
+    </Style>
+
+    <Style x:Key="PoppinsMediumGreen14" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsMedium" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=14, Android=14}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorGreen}" />
+    </Style>
+
+    <Style x:Key="PoppinsMediumGreen16" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsMedium" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=16, Android=16}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorGreen}" />
+    </Style>
+
+    <Style x:Key="PoppinsMediumGreen18" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsMedium" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=18, Android=18}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorGreen}" />
+    </Style>
+
+    <Style x:Key="PoppinsMediumGreen10" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsMedium" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=10, Android=10}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorGreen}" />
+    </Style>
+
+    <Style x:Key="PoppinsMediumGreen11" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsMedium" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=11, Android=11}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorGreen}" />
+    </Style>
+
+    <Style x:Key="PoppinsMediumDarkBlack10" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsMedium" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=10, Android=10}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorDarkBlack}" />
+    </Style>
+
+    <Style x:Key="PoppinsMediumDarkBlack11" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsMedium" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=11, Android=11}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorDarkBlack}" />
+    </Style>
+
+    <Style x:Key="PoppinsMediumDarkBlack14" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsMedium" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=14, Android=14}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorDarkBlack}" />
+    </Style>
+
+    <Style x:Key="PoppinsMediumDarkBlack12" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsMedium" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=12, Android=12}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorDarkBlack}" />
+    </Style>
+
+    <Style x:Key="PoppinsMediumLightGreen10" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsMedium" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=10, Android=10}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorLightGreen}" />
+    </Style>
+
+    <Style x:Key="PoppinsMediumLightGreen12" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsMedium" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=12, Android=12}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorLightGreen}" />
+    </Style>
+
+
+    <Style x:Key="PoppinsMediumBlack12" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsMedium" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=12, Android=12}" />
+        <Setter Property="TextColor" Value="Black" />
+    </Style>
+
+    <Style x:Key="PoppinsMediumBlack14" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsMedium" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=14, Android=14}" />
+        <Setter Property="TextColor" Value="Black" />
+    </Style>
+    <Style x:Key="PoppinsMediumBlack16" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsMedium" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=16, Android=16}" />
+        <Setter Property="TextColor" Value="Black" />
+    </Style>
+    <Style x:Key="PoppinsMediumGray14" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsMedium" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=14, Android=14}" />
+        <Setter Property="TextColor" Value="Black" />
+    </Style>
+
+    <Style x:Key="PoppinsMediumDarkGray12" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsMedium" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=12, Android=12}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorGray}" />
+    </Style>
+
+    <Style x:Key="PoppinsMediumWhite12" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsMedium" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=12, Android=12}" />
+        <Setter Property="TextColor" Value="White" />
+    </Style>
+
+    <Style x:Key="PoppinsMediumWhite14" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsMedium" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=14, Android=14}" />
+        <Setter Property="TextColor" Value="White" />
+    </Style>
+
+    <Style x:Key="PoppinsMediumLightSkyGreen12" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsMedium" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=12, Android=12}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorLightSkyGreen}" />
+    </Style>
+
+    <Style x:Key="PoppinsMediumRed12" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsMedium" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=12, Android=12}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorRed}" />
+    </Style>
+
+    <!--  PoppinsSemiBold  -->
+
+    <Style x:Key="PoppinsSemiBoldGreen28" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsSemiBold" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=28, Android=28}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorGreen}" />
+    </Style>
+    <Style x:Key="PoppinsSemiBoldGreen18" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsSemiBold" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=18, Android=18}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorGreen}" />
+    </Style>
+
+    <Style x:Key="PoppinsSemiBoldGreen16" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsSemiBold" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=16, Android=16}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorGreen}" />
+    </Style>
+
+    <Style x:Key="PoppinsSemiBoldGreen14" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsSemiBold" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=14, Android=14}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorGreen}" />
+    </Style>
+
+    <Style x:Key="PoppinsSemiBoldDarkBlack20" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsSemiBold" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=20, Android=20}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorDarkBlack}" />
+    </Style>
+
+    <Style x:Key="PoppinsSemiBoldDarkBlack16" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsSemiBold" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=16, Android=16}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorDarkBlack}" />
+    </Style>
+
+    <Style x:Key="PoppinsSemiBoldDarkBlack13" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsSemiBold" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=13, Android=13}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorDarkBlack}" />
+    </Style>
+
+    <Style x:Key="PoppinsSemiBoldDarkBlack14" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsSemiBold" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=14, Android=14}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorDarkBlack}" />
+    </Style>
+
+    <Style x:Key="PoppinsSemiBoldBlack20" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsSemiBold" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=20, Android=20}" />
+        <Setter Property="TextColor" Value="Black" />
+    </Style>
+    <Style x:Key="PoppinsSemiBoldBlack16" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsSemiBold" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=16, Android=16}" />
+        <Setter Property="TextColor" Value="Black" />
+    </Style>
+    <Style x:Key="PoppinsSemiBoldBlack14" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsSemiBold" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=14, Android=14}" />
+        <Setter Property="TextColor" Value="Black" />
+    </Style>
+    <Style x:Key="PoppinsSemiBoldBlack12" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsSemiBold" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=12, Android=12}" />
+        <Setter Property="TextColor" Value="Black" />
+    </Style>
+    <Style x:Key="PoppinsSemiBoldBlack13" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsSemiBold" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=13, Android=13}" />
+        <Setter Property="TextColor" Value="Black" />
+    </Style>
+
+    <Style x:Key="PoppinsSemiBoldWhite16" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsSemiBold" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=16, Android=16}" />
+        <Setter Property="TextColor" Value="White" />
+    </Style>
+
+    <Style x:Key="PoppinsSemiBoldDimGray20" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsSemiBold" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=20, Android=20}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorDimGray}" />
+    </Style>
+    <Style x:Key="PoppinsSemiBoldDimGray18" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsSemiBold" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=18, Android=18}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorDimGray}" />
+    </Style>
+    <Style x:Key="PoppinsSemiBoldDimGray16" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsSemiBold" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=16, Android=16}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorDimGray}" />
+    </Style>
+    <Style x:Key="PoppinsSemiBoldWhite15" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsSemiBold" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=15, Android=15}" />
+        <Setter Property="TextColor" Value="White" />
+    </Style>
+
+    <Style x:Key="PoppinsRegularLightBlue14" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsRegular" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=14, Android=14}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorLightBlue}" />
+    </Style>
+    <Style x:Key="PoppinsRegularLightBlue30" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsRegular" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=30, Android=30}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorLightBlue}" />
+    </Style>
+    <Style x:Key="PoppinsRegularBlack15" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsRegular" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=15, Android=15}" />
+        <Setter Property="TextColor" Value="Black" />
+    </Style>
+    <Style x:Key="PoppinsRegularBlack16" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsRegular" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=16, Android=16}" />
+        <Setter Property="TextColor" Value="Black" />
+    </Style>
+    <Style x:Key="PoppinsRegularBlack17" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsRegular" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=17, Android=17}" />
+        <Setter Property="TextColor" Value="Black" />
+    </Style>
+    <Style x:Key="PoppinsRegularBlack20" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsRegular" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=20, Android=20}" />
+        <Setter Property="TextColor" Value="Black" />
+    </Style>
+
+    <!--  PoppinsBold  -->
+
+    <Style x:Key="PoppinsBoldGreen12" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsBold" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=12, Android=12}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorGreen}" />
+    </Style>
+
+    <Style x:Key="PoppinsBoldGreen10" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsBold" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=10, Android=10}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorGreen}" />
+    </Style>
+    <Style x:Key="PoppinsBoldBlack12" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsBold" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=12, Android=12}" />
+        <Setter Property="TextColor" Value="Black" />
+    </Style>
+
+    <Style x:Key="PoppinsBoldDimGray20" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsBold" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=20, Android=20}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorDimGray}" />
+    </Style>
+    <Style x:Key="PoppinsBoldDimGray18" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsBold" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=18, Android=18}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorDimGray}" />
+    </Style>
+
+    <!--  Buttons styles  -->
+    <Style x:Key="SeparatorLine" TargetType="BoxView">
+        <Setter Property="BackgroundColor" Value="{StaticResource ColorBorderGray}" />
+        <Setter Property="HeightRequest" Value="0.5" />
+    </Style>
+    <Style x:Key="ButtonLightGreen" TargetType="Button">
+        <Setter Property="FontFamily" Value="PoppinsMedium" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=14, Android=14}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorGreen}" />
+        <Setter Property="BackgroundColor" Value="{StaticResource ColorLightGreen}" />
+        <Setter Property="CornerRadius" Value="31" />
+        <Setter Property="HeightRequest" Value="46" />
+    </Style>
+    
+    <Style x:Key="ButtonRegister" TargetType="Button">
+        <Setter Property="FontFamily" Value="PoppinsMedium" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=11, Android=11}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorGreen}" />
+        <Setter Property="BackgroundColor" Value="{StaticResource ColorLightGreen}" />
+        <Setter Property="CornerRadius" Value="22" />
+        <Setter Property="HeightRequest" Value="32" />
+        <Setter Property="WidthRequest" Value="96" />
+    </Style>
+
+    <Style x:Key="ButtonYellow" TargetType="Button">
+        <Setter Property="FontFamily" Value="PoppinsMedium" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=8, Android=8}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorGreen}" />
+        <Setter Property="BackgroundColor" Value="{StaticResource ColorYellow}" />
+        <Setter Property="CornerRadius" Value="22" />
+        <Setter Property="HeightRequest" Value="26" />
+        <Setter Property="WidthRequest" Value="76" />
+    </Style>
+
+    <Style x:Key="ButtonPopupCancel" TargetType="Button">
+        <Setter Property="FontFamily" Value="PoppinsMedium" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=12, Android=12}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorGreen}" />
+        <Setter Property="BorderColor" Value="{StaticResource ColorGreen}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="BorderWidth" Value="1" />
+        <Setter Property="CornerRadius" Value="30" />
+        <Setter Property="HeightRequest" Value="37" />
+        <Setter Property="WidthRequest" Value="98" />
+    </Style>
+
+    <Style x:Key="ButtonPopupReset" TargetType="Button">
+        <Setter Property="FontFamily" Value="PoppinsMedium" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=12, Android=12}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorGreen}" />
+        <Setter Property="BorderColor" Value="{StaticResource ColorGreen}" />
+        <Setter Property="BackgroundColor" Value="{StaticResource ColorBgLightGreen}" />
+        <Setter Property="BorderWidth" Value="1" />
+        <Setter Property="CornerRadius" Value="30" />
+        <Setter Property="HeightRequest" Value="37" />
+        <Setter Property="WidthRequest" Value="98" />
+    </Style>
+
+    <Style x:Key="ButtonPopupDarkGrayOutline" TargetType="Button">
+        <Setter Property="FontFamily" Value="PoppinsMedium" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=12, Android=12}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorDarkGray}" />
+        <Setter Property="BorderColor" Value="{StaticResource ColorDarkGray}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="BorderWidth" Value="1" />
+        <Setter Property="CornerRadius" Value="30" />
+        <Setter Property="HeightRequest" Value="37" />
+        <Setter Property="WidthRequest" Value="98" />
+    </Style>
+
+    <Style x:Key="ButtonPopupOutlineDelete" TargetType="Button">
+        <Setter Property="FontFamily" Value="PoppinsMedium" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=12, Android=12}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorGreen}" />
+        <Setter Property="BorderColor" Value="{StaticResource ColorRed}" />
+        <Setter Property="BackgroundColor" Value="{StaticResource ColorBgRed}" />
+        <Setter Property="BorderWidth" Value="1" />
+        <Setter Property="CornerRadius" Value="30" />
+        <Setter Property="HeightRequest" Value="37" />
+        <Setter Property="WidthRequest" Value="98" />
+    </Style>
+    <Style x:Key="ButtonLightBlue" TargetType="Button">
+        <Setter Property="FontFamily" Value="PoppinsRegular" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=17, Android=17}" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="BorderColor" Value="{StaticResource ColorDimGray}" />
+        <Setter Property="BackgroundColor" Value="{StaticResource ColorLightBlue}" />
+        <Setter Property="BorderWidth" Value="1" />
+        <Setter Property="CornerRadius" Value="5" />
+        <Setter Property="HeightRequest" Value="48" />
+    </Style>
 </ResourceDictionary>
 

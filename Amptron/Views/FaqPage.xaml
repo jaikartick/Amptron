@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Amptron.Views.FaqPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White"
+             xmlns:i18n="clr-namespace:Amptron.i18n"
+             xmlns:viewModels="clr-namespace:Amptron.ViewModels"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             ios:Page.UseSafeArea="False"
+             x:DataType="viewModels:FaqViewModel"
+             xmlns:models="clr-namespace:Amptron.Models"
+             xmlns:epj="clr-namespace:epj.Expander.Maui;assembly=epj.Expander.Maui"
+             Title="FaqPage">
+    <StackLayout
+            Padding="0,20,0,0"
+            Orientation="Vertical"
+            VerticalOptions="Fill">
+        <Grid
+            Padding="10,0"
+            ColumnDefinitions="*"
+            VerticalOptions="Start">
+            <StackLayout Orientation="Horizontal" VerticalOptions="End" Spacing="5">
+                <Image
+                    Grid.Column="0"
+                    HorizontalOptions="Start"
+                    Source="back"
+                    VerticalOptions="Center" />
+                <Label
+                    Style="{StaticResource PoppinsRegularBlack16}"
+                    Text="{i18n:Translate Back}"
+                    VerticalOptions="Center" />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NavigateBackCommand}" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+            <Image
+                Grid.Column="0"
+                HorizontalOptions="Center"
+                Source="nav_logo"
+                VerticalOptions="Center" />
+        </Grid>
+
+        <StackLayout
+            Margin="0,10"
+            Orientation="Vertical"
+            VerticalOptions="StartAndExpand">
+            <VerticalStackLayout
+                x:Name="faqCollection"
+                BindableLayout.ItemsSource="{Binding FaqCollection}"
+                VerticalOptions="FillAndExpand">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="models:FaqDataModel">
+                        <Grid RowDefinitions="Auto,1" VerticalOptions="StartAndExpand">
+                            <BoxView
+                                Grid.Row="1"
+                                BackgroundColor="{StaticResource ColorDimGray}"
+                                HeightRequest="1"
+                                Opacity="0.25" />
+
+                            <epj:Expander
+                                Grid.Row="0"
+                                Animated="True"
+                                  CollapseDuration="100"
+                                  ExpandDuration="200"
+                                  CollapseEasing="{x:Static Easing.SpringOut}"
+                                  ExpandEasing="{x:Static Easing.SpringIn}"
+                                Margin="20,10,20,10">
+                                <epj:Expander.HeaderContent>
+                                    <Grid ColumnDefinitions="*,Auto">
+                                        <Label
+                                            Grid.Column="0"
+                                            HorizontalOptions="Start"
+                                            Style="{StaticResource PoppinsBoldBlack12}"
+                                            Text="{Binding Question}" />
+                                        <Image
+                                            Grid.Column="1"
+                                            HeightRequest="12"
+                                            HorizontalOptions="Start"
+                                            Source="arrowdown"
+                                            VerticalOptions="Start"
+                                            WidthRequest="12">
+                                            <Image.Triggers>
+                                                <DataTrigger
+                                                    Binding="{Binding Source={RelativeSource AncestorType={x:Type toolkit:Expander}}, Path=IsExpanded}"
+                                                    TargetType="Image"
+                                                    Value="True">
+                                                    <Setter Property="Source" Value="arrowup" />
+                                                </DataTrigger>
+                                            </Image.Triggers>
+                                        </Image>
+                                    </Grid>
+                                </epj:Expander.HeaderContent>
+                                <VerticalStackLayout>
+                                    <Label
+                                        Margin="0,10"
+                                        Style="{StaticResource PoppinsRegularDarkGray12}"
+                                        Text="{Binding Answer}" />
+                                </VerticalStackLayout>
+                            </epj:Expander>
+                        </Grid>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </VerticalStackLayout>
+            <Button
+                Margin="36,30,36,0"
+                Command="{Binding NavigateSubmitQuestionCommand}"
+                FontSize="20"
+                Style="{StaticResource ButtonLightBlue}"
+                Text="{i18n:Translate SubmitYourQuestion}"
+                VerticalOptions="Start" />
+        </StackLayout>
+
+        <!--<Frame
+            Margin="0,20,0,0"
+            Padding="0"
+            BorderColor="Transparent"
+            HasShadow="False"
+            HeightRequest="50"
+            VerticalOptions="End">
+            <Grid
+                BackgroundColor="{StaticResource ColorLightBlue}"
+                ColumnDefinitions="0.5*, 0.5*"
+                VerticalOptions="FillAndExpand">
+                <Image
+                    Grid.Column="0"
+                    HeightRequest="35"
+                    HorizontalOptions="Center"
+                    Source="exclamation"
+                    VerticalOptions="Center"
+                    WidthRequest="35">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding NavigateToFaqCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image
+                    Grid.Column="1"
+                    HorizontalOptions="Center"
+                    Source="call"
+                    VerticalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding NavigateToContactUsCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+        </Frame>-->
+    </StackLayout>
+</ContentPage>

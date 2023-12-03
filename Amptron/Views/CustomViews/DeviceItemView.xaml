@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:i18n="clr-namespace:Amptron.i18n"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Name="deviceItemView"
+             x:Class="Amptron.Views.CustomViews.DeviceItemView">
+    <Grid
+        Margin="0,0,0,0"
+        ColumnDefinitions="0.45*,0.05*,0.50*"
+        RowDefinitions="Auto, Auto, Auto, 1"
+        RowSpacing="18"
+        VerticalOptions="Start">
+        <Label
+            HorizontalOptions="End"
+            Style="{OnPlatform iOS={StaticResource PoppinsRegularBlack20},
+                                Android={StaticResource PoppinsRegularBlack14}}"
+            Text="{i18n:Translate DeviceModel}" />
+        <Label
+            Grid.Row="1"
+            HorizontalOptions="End"
+            Style="{OnPlatform iOS={StaticResource PoppinsRegularBlack20},
+                                Android={StaticResource PoppinsRegularBlack14}}"
+            Text="{i18n:Translate DeviceName}"
+            VerticalOptions="Center" />
+        <Label
+            Grid.Row="2"
+            HorizontalOptions="End"
+            Style="{OnPlatform iOS={StaticResource PoppinsRegularBlack20},
+                                Android={StaticResource PoppinsRegularBlack14}}"
+            Text="{i18n:Translate DeviceCode}"
+            VerticalOptions="Center" />
+        <Label
+            Grid.Row="0"
+            Grid.Column="1"
+            Style="{OnPlatform iOS={StaticResource PoppinsRegularBlack20},
+                                Android={StaticResource PoppinsRegularBlack14}}"
+            Text=":"
+            VerticalOptions="Center" />
+        <Label
+            Grid.Row="1"
+            Grid.Column="1"
+            Style="{OnPlatform iOS={StaticResource PoppinsRegularBlack20},
+                                Android={StaticResource PoppinsRegularBlack14}}"
+            Text=":"
+            VerticalOptions="Center" />
+        <Label
+            Grid.Row="2"
+            Grid.Column="1"
+            Style="{OnPlatform iOS={StaticResource PoppinsRegularBlack20},
+                                Android={StaticResource PoppinsRegularBlack14}}"
+            Text=":"
+            VerticalOptions="Center" />
+
+        <Label
+            Grid.Row="0"
+            Grid.Column="2"
+            Style="{OnPlatform iOS={StaticResource PoppinsRegularBlack17},
+                                Android={StaticResource PoppinsRegularBlack14}}"
+            Text="{Binding Device.DeviceModel, Source={x:Reference deviceItemView}}"
+            VerticalOptions="Center" />
+        <Frame
+            Grid.Row="1"
+            Grid.Column="2"
+            Margin="0,0,5,0"
+            Padding="0,0,5,0"
+            VerticalOptions="Center">
+            <StackLayout Orientation="Horizontal">
+                <!--<Label
+                    IsVisible="{Binding IsEditName, Converter={StaticResource BooleanNegatedConverter}}"
+                    Style="{StaticResource PoppinsRegularBlack20}"
+                    Text="{Binding DeviceName}" />-->
+                <Entry
+                    Focused="Entry_Focused"
+                    HorizontalOptions="FillAndExpand"
+                    IsEnabled="{Binding Device.IsEditName}"
+                    Style="{OnPlatform iOS={StaticResource PoppinsRegularBlack17},
+                                        Android={StaticResource PoppinsRegularBlack14}}"
+                    Text="{Binding DisplayName, Source={x:Reference deviceItemView}}">
+                    <Entry.Behaviors>
+                        <toolkit:EventToCommandBehavior Command="{Binding Device.UnfocusedCommand}" EventName="Unfocused" />
+                    </Entry.Behaviors>
+                    <Entry.Triggers>
+                        <DataTrigger
+                            Binding="{Binding Device.IsEditName}"
+                            TargetType="Entry"
+                            Value="true">
+                            <Setter Property="BackgroundColor" Value="{StaticResource ColorWhite}" />
+                        </DataTrigger>
+                        <DataTrigger
+                            Binding="{Binding Device.IsEditName}"
+                            TargetType="Entry"
+                            Value="false">
+                            <Setter Property="BackgroundColor" Value="{StaticResource ColorGray}" />
+                        </DataTrigger>
+                    </Entry.Triggers>
+                </Entry>
+                <Image
+                    HorizontalOptions="End"
+                    Source="edit_icon.png"
+                    WidthRequest="20">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Device.EditCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+        </Frame>
+        <Label
+            Grid.Row="2"
+            Grid.Column="2"
+            Style="{OnPlatform iOS={StaticResource PoppinsRegularBlack17},
+                                Android={StaticResource PoppinsRegularBlack14}}"
+            Text="{Binding DeviceCode, Source={x:Reference deviceItemView}}"
+            VerticalOptions="Center" />
+        <BoxView
+            Grid.Row="3"
+            Grid.ColumnSpan="3"
+            BackgroundColor="{StaticResource ColorGray}"
+            HeightRequest="1" />
+    </Grid>
+</ContentView>
+

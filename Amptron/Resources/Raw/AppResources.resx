@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="Onboarding_View1Content" xml:space="preserve">
+        <value>Welcome to the AMPTRON Link App. The app’s main functionality is to monitor details of the Amptron BluPower batteries. </value>
+    </data>
+	<data name="Onboarding_View2Content" xml:space="preserve">
+        <value>First search for a device on the Device list page and connect to the device. To switch between devices, select a different device on the list. </value>
+    </data>
+	<data name="GetStarted" xml:space="preserve">
+        <value>Get Started</value>
+    </data>
+	<data name="DummyTextTitle" xml:space="preserve">
+		<value>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</value>
+    </data>
+	<data name="DummyTextContent" xml:space="preserve">
+		<value>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</value>
+    </data>
+	<data name="Login" xml:space="preserve">
+		<value>Login</value>
+    </data>
+	<data name="RememberPassword" xml:space="preserve">
+		<value>Remember Password</value>
+    </data>
+	<data name="ForgotPassword" xml:space="preserve">
+		<value>Forgot Password?</value>
+    </data>
+	<data name="Password" xml:space="preserve">
+		<value>Password</value>
+    </data>
+	<data name="SendInstructions" xml:space="preserve">
+		<value>Send Instructions</value>
+    </data>
+	<data name="ResetPassword" xml:space="preserve">
+		<value>Reset Password</value>
+    </data>
+	<data name="Email" xml:space="preserve">
+		<value>Email ID</value>
+    </data>
+	<data name="Back" xml:space="preserve">
+		<value>Back</value>
+    </data>
+	<data name="OpenEmailApp" xml:space="preserve">
+		<value>Open email app</value>
+    </data>
+	<data name="CheckYourMail" xml:space="preserve">
+		<value>Check your mail</value>
+    </data>
+	<data name="CreateAccount" xml:space="preserve">
+		<value>Create Account</value>
+    </data>
+	<data name="CreateAccountInfo" xml:space="preserve">
+		<value>Sign up to get started!</value>
+    </data>
+	<data name="SignUp" xml:space="preserve">
+		<value>Sign Up</value>
+    </data>
+	<data name="GuestLogin" xml:space="preserve">
+		<value>Guest Login</value>
+    </data>
+	<data name="Or" xml:space="preserve">
+		<value>Or</value>
+    </data>
+	<data name="Name" xml:space="preserve">
+		<value>Name</value>
+    </data>
+	<data name="Subject" xml:space="preserve">
+		<value>Subject</value>
+    </data>
+	<data name="Text" xml:space="preserve">
+		<value>Text</value>
+    </data>
+	<data name="SubmitYourQuestion" xml:space="preserve">
+		<value>Submit your Question</value>
+    </data>
+	<data name="SubmitForm" xml:space="preserve">
+		<value>Submit Form</value>
+    </data>
+	<data name="ResetPasswordInfo" xml:space="preserve">
+		<value>Enter the email associated with your account and we'll send an email with instructions to reset your password.</value>
+    </data>
+	<data name="SentMailInfo" xml:space="preserve">
+		<value>We have sent a password recover instructions to your email.</value>
+    </data>
+	<data name="AboutUs" xml:space="preserve">
+		<value>About Us</value>
+    </data>
+	<data name="Profile" xml:space="preserve">
+		<value>Profile</value>
+    </data>
+	<data name="AmptronReserved" xml:space="preserve">
+		<value>AMPTRON®</value>
+    </data>
+	<data name="AboutUs_Content1" xml:space="preserve">
+		<value> is a leader in high performance energy storage solutions, supplying Lithium batteries, chargers, power monitors, solar panels and portable power packs.</value>
+    </data>
+	<data name="AboutUs_Content2" xml:space="preserve">
+		<value> can be used as an AR “Alternative Replacement” for deep cycle Lead Acid, Gel or AGM Batteries. </value>
+    </data>
+	<data name="AboutUs_Content3" xml:space="preserve">
+		<value> trust and depend on us for our high quality, safe and reliable technology.</value>
+    </data>
+	<data name="AboutUs_Our" xml:space="preserve">
+		<value>Our </value>
+    </data>
+	<data name="AboutUs_LithiumBatteries" xml:space="preserve">
+		<value>Lithium LiFePO4 Batteries</value>
+    </data>
+	<data name="AboutUs_OurCustomers" xml:space="preserve">
+		<value>Our customers</value>
+    </data>
+	<data name="EditPhoto" xml:space="preserve">
+		<value>Edit Photo</value>
+    </data>
+	<data name="FirstName" xml:space="preserve">
+		<value>First Name</value>
+    </data>
+	<data name="LastName" xml:space="preserve">
+		<value>Last Name</value>
+    </data>
+	<data name="MobileNumber" xml:space="preserve">
+		<value>MobileNumber</value>
+    </data>
+	<data name="Password" xml:space="preserve">
+		<value>Password</value>
+    </data>
+	<data name="Update" xml:space="preserve">
+		<value>Update</value>
+    </data>
+	<data name="DeviceInfo" xml:space="preserve">
+		<value>Device Info</value>
+    </data>
+	<data name="DeviceList" xml:space="preserve">
+		<value>Device List</value>
+    </data>
+	<data name="DeviceModel" xml:space="preserve">
+		<value>Device Model</value>
+    </data>
+	<data name="DeviceName" xml:space="preserve">
+		<value>Device Name</value>
+    </data>
+	<data name="NoOfCycles" xml:space="preserve">
+		<value>No of Cycles</value>
+    </data>
+	<data name="Version" xml:space="preserve">
+		<value>Version</value>
+    </data>
+	<data name="DeviceCode" xml:space="preserve">
+		<value>Device Code</value>
+    </data>
+	<data name="SNCode" xml:space="preserve">
+		<value>SN Code</value>
+    </data>
+	<data name="Protocol" xml:space="preserve">
+		<value>Protocol</value>
+    </data>
+	<data name="ProtocolVer" xml:space="preserve">
+		<value>Protocol Ver</value>
+    </data>
+	<data name="Status" xml:space="preserve">
+		<value>Status</value>
+    </data>
+	<data name="RunningStatus" xml:space="preserve">
+		<value>Running Status</value>
+    </data>
+	<data name="TempStatus" xml:space="preserve">
+		<value>Temp Status</value>
+    </data>
+	<data name="LastUpdated" xml:space="preserve">
+		<value>Last Updated</value>
+    </data>
+	<data name="Power" xml:space="preserve">
+		<value>Power</value>
+    </data>
+	<data name="Dashboard" xml:space="preserve">
+		<value>Dashboard</value>
+    </data>
+	<data name="Voltage" xml:space="preserve">
+		<value>Voltage</value>
+    </data>
+	<data name="DischargeCurrent" xml:space="preserve">
+		<value>Discharge Current</value>
+    </data>
+	<data name="DetailedView" xml:space="preserve">
+		<value>Detailed View</value>
+    </data>
+	<data name="BatteryLife" xml:space="preserve">
+		<value>Battery Life</value>
+    </data>
+	<data name="SOHPercentage" xml:space="preserve">
+		<value>SOH%</value>
+    </data>
+	<data name="Cfet_off" xml:space="preserve">
+		<value>Cfet_off</value>
+    </data>
+	<data name="Dfet_off" xml:space="preserve">
+		<value>Dfet_off</value>
+    </data>
+	<data name="Current" xml:space="preserve">
+		<value>Current</value>
+    </data>
+	<data name="CellTemp" xml:space="preserve">
+		<value>Cell Temp</value>
+    </data>
+	<data name="BMSTemp" xml:space="preserve">
+		<value>BMS Temp</value>
+    </data>
+	<data name="RatedCapacity" xml:space="preserve">
+		<value>Rated Capacity</value>
+    </data>
+	<data name="RemainingCapacity" xml:space="preserve">
+		<value>Remaining Capacity</value>
+    </data>
+	<data name="AlarmPage" xml:space="preserve">
+		<value>Alarm Page</value>
+    </data>
+	<data name="ProtectionAlarms" xml:space="preserve">
+		<value>Protection Alarms</value>
+    </data>
+	<data name="TemperatureAlarms" xml:space="preserve">
+		<value>Temperature Alarms</value>
+    </data>
+	<data name="ChargeSwitch" xml:space="preserve">
+		<value>Charge Switch</value>
+    </data>
+	<data name="DischargeSwitch" xml:space="preserve">
+		<value>Discharge Switch</value>
+    </data>
+	<data name="NoDevicesFound" xml:space="preserve">
+		<value>No Devices Found</value>
+    </data>
+	<data name="NoDevicesFoundInfo" xml:space="preserve">
+		<value>Don't see the product you were looking for ?</value>
+    </data>
+	<data name="AddDevice" xml:space="preserve">
+		<value>Add Device</value>
+    </data>
+	<data name="NameOfTheDevice" xml:space="preserve">
+		<value>Name of the Device</value>
+    </data>
+	<data name="SearchByNameOrId" xml:space="preserve">
+		<value>Search by Id/Name</value>
+    </data>
+	<data name="BalancingStatus" xml:space="preserve">
+		<value>Balancing Status</value>
+    </data>
+	<data name="Add" xml:space="preserve">
+		<value>Add</value>
+    </data>
+</root>
+

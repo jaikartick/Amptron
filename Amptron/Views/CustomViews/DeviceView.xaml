@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Name="deviceView"
+             x:Class="Amptron.Views.CustomViews.DeviceView">
+    <Frame
+        Padding="0"
+        CornerRadius="0"
+        HeightRequest="80"
+        HorizontalOptions="FillAndExpand">
+        <StackLayout
+            HorizontalOptions="FillAndExpand"
+            Orientation="Horizontal"
+            Spacing="15">
+            <StackLayout.Triggers>
+                <DataTrigger TargetType="StackLayout" Binding="{Binding IsSelected}" Value="true">
+                    <Setter Property="BackgroundColor" Value="#ACCEF7"/>
+                </DataTrigger>
+                <DataTrigger TargetType="StackLayout" Binding="{Binding IsSelected}" Value="false">
+                    <Setter Property="BackgroundColor" Value="White"/>
+                </DataTrigger>
+            </StackLayout.Triggers>
+            <BoxView BackgroundColor="{Binding StatusColor, Source={x:Reference deviceView}}" WidthRequest="10" />
+            <Label
+                HorizontalOptions="StartAndExpand"
+                Text="{Binding DisplayName, Source={x:Reference deviceView}}"
+                VerticalOptions="Center" />
+
+            <Image
+                HeightRequest="50"
+                HorizontalOptions="End"
+                Source="bluetooth.png"
+                VerticalOptions="Center"
+                WidthRequest="50" />
+        </StackLayout>
+    </Frame>
+</ContentView>
+
