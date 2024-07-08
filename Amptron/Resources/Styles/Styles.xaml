@@ -637,6 +637,12 @@
         <Setter Property="FontSize" Value="{OnPlatform iOS=14, Android=14}" />
         <Setter Property="TextColor" Value="{StaticResource ColorDarkBlack}" />
     </Style>
+    <Style x:Key="PoppinsMediumDarkBlack16" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsMedium" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=16, Android=16}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorDarkBlack}" />
+    </Style>
 
     <Style x:Key="PoppinsMediumDarkBlack12" TargetType="Label">
         <Setter Property="FontFamily" Value="PoppinsMedium" />
@@ -910,6 +916,24 @@
         <Setter Property="FontFamily" Value="PoppinsBold" />
         <Setter Property="FontAttributes" Value="None" />
         <Setter Property="FontSize" Value="{OnPlatform iOS=18, Android=18}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorDimGray}" />
+    </Style>
+    <Style x:Key="PoppinsBoldDimGray16" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsBold" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=16, Android=16}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorDimGray}" />
+    </Style>
+    <Style x:Key="PoppinsBoldDimGray14" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsBold" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=14, Android=14}" />
+        <Setter Property="TextColor" Value="{StaticResource ColorDimGray}" />
+    </Style>
+    <Style x:Key="PoppinsBoldDimGray12" TargetType="Label">
+        <Setter Property="FontFamily" Value="PoppinsBold" />
+        <Setter Property="FontAttributes" Value="None" />
+        <Setter Property="FontSize" Value="{OnPlatform iOS=12, Android=12}" />
         <Setter Property="TextColor" Value="{StaticResource ColorDimGray}" />
     </Style>
 

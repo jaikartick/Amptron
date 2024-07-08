@@ -29,6 +29,7 @@ namespace Amptron.Helpers
             services.AddTransient<AboutUsPage, AboutUsPage>();
             services.AddTransient<AlarmPage, AlarmPage>();
             services.AddTransient<AddDevicePage, AddDevicePage>();
+            services.AddTransient<HistoryPage, HistoryPage>();
 
             services.AddTransient<OnboardingViewModel, OnboardingViewModel>();
             services.AddTransient<LoginViewModel, LoginViewModel>();
@@ -43,6 +44,7 @@ namespace Amptron.Helpers
             services.AddTransient<BottomTabViewModel, BottomTabViewModel>();
             services.AddTransient<AlarmViewModel, AlarmViewModel>();
             services.AddTransient<AddDeviceViewModel, AddDeviceViewModel>();
+            services.AddTransient<HistoryViewModel, HistoryViewModel>();
 
             #region Services
             services.AddSingleton<INavigationService, NavigationService>();

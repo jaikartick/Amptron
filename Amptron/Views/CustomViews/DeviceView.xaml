@@ -2,36 +2,58 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Name="deviceView"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="Amptron.Views.CustomViews.DeviceView">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <toolkit:InvertedBoolConverter x:Key="InvertedBoolConverter"/>
+        </ResourceDictionary>
+    </ContentView.Resources>
     <Frame
         Padding="0"
-        CornerRadius="0"
+        BorderColor="Black"
+        CornerRadius="5"
         HeightRequest="80"
         HorizontalOptions="FillAndExpand">
         <StackLayout
             HorizontalOptions="FillAndExpand"
             Orientation="Horizontal"
+            Padding="10,0"
             Spacing="15">
-            <StackLayout.Triggers>
-                <DataTrigger TargetType="StackLayout" Binding="{Binding IsSelected}" Value="true">
-                    <Setter Property="BackgroundColor" Value="#ACCEF7"/>
-                </DataTrigger>
-                <DataTrigger TargetType="StackLayout" Binding="{Binding IsSelected}" Value="false">
-                    <Setter Property="BackgroundColor" Value="White"/>
-                </DataTrigger>
-            </StackLayout.Triggers>
-            <BoxView BackgroundColor="{Binding StatusColor, Source={x:Reference deviceView}}" WidthRequest="10" />
+            <Image
+                HeightRequest="50"
+                HorizontalOptions="Start"
+                Source="battery"
+                VerticalOptions="Center"
+                WidthRequest="50" />
             <Label
                 HorizontalOptions="StartAndExpand"
                 Text="{Binding DisplayName, Source={x:Reference deviceView}}"
+                VerticalTextAlignment="Center"
                 VerticalOptions="Center" />
 
-            <Image
-                HeightRequest="50"
-                HorizontalOptions="End"
-                Source="bluetooth.png"
-                VerticalOptions="Center"
-                WidthRequest="50" />
+            <Border HeightRequest="40" Padding="5,5,10,5" StrokeShape="RoundRectangle 20" BackgroundColor="LightGray" IsVisible="{Binding IsOn,Source={x:Reference deviceView}, Converter={StaticResource InvertedBoolConverter}}">
+                <HorizontalStackLayout Spacing="5">
+                    <Border StrokeShape="RoundRectangle 10" Padding="3" BackgroundColor="White" WidthRequest="25" HeightRequest="25">
+                        <Image Source="bluetoothicon" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </Border>
+                    <Label Text="OFF" Style="{StaticResource PoppinsSemiBoldDimGray16}" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+                </HorizontalStackLayout>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TurnToOn"/>
+                </Border.GestureRecognizers>
+            </Border>
+            <Border HeightRequest="40" Padding="5,5,10,5" StrokeShape="RoundRectangle 20" BackgroundColor="Green" IsVisible="{Binding IsOn,Source={x:Reference deviceView}}">
+                <HorizontalStackLayout Spacing="5">
+                    <Label Text="ON" Style="{StaticResource PoppinsSemiBoldWhite16}" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+                    <Border StrokeShape="RoundRectangle 10" Padding="3" BackgroundColor="White" WidthRequest="25" HeightRequest="25">
+                        <Image Source="bluetoothicon" WidthRequest="20" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </Border>
+                </HorizontalStackLayout>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TurnToOff"/>
+                </Border.GestureRecognizers>
+            </Border>
         </StackLayout>
     </Frame>
 </ContentView>

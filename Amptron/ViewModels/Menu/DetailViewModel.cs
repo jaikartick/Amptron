@@ -8,6 +8,10 @@ namespace Amptron.ViewModels.Menu
 	{
         public double BatteryLife { get; set; }
         public double BatteryVoltage { get; set; }
+        public double VoltageDifference { get; set; }
+        public double MinimumVoltage { get; set; }
+        public double MaximumVoltage { get; set; }
+
         public double Current { get; set; }
         public double CellTemp { get; set; }
         public double BMSTemp { get; set; }
@@ -24,7 +28,10 @@ namespace Amptron.ViewModels.Menu
             Cfet_off = false;
             Dfet_off = true;
             Status = false;
-            BatteryVoltage = 12.00;
+            BatteryVoltage = 13.3;
+            VoltageDifference = 0.004;
+            MinimumVoltage = 3.316;
+            MaximumVoltage = 3.320;
 
             Current = 0;
             CellTemp = 41;

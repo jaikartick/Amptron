@@ -28,7 +28,7 @@
                     Source="search_device.png"
                     WidthRequest="37" />
             </StackLayout>
-            <ScrollView Orientation="Vertical" VerticalOptions="StartAndExpand">
+            <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
                 <Grid>
                     <StackLayout
                         BindableLayout.ItemsSource="{Binding Devices}"
@@ -42,34 +42,38 @@
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
                     </StackLayout>
-                    <StackLayout
-                        Orientation="Vertical"
-                        Spacing="20"
-                        IsVisible="{Binding IsDevicesEmpty}"
-                        VerticalOptions="Center">
-                        <Image
-                            HeightRequest="154"
-                            Source="car_battery.png"
-                            WidthRequest="154" />
-                        <Label
-                            HorizontalOptions="Center"
-                            Style="{StaticResource PoppinsRegularBlack20}"
-                            Text="{i18n:Translate NoDevicesFound}" />
-                        <Label
-                            HorizontalOptions="Center"
-                            Style="{StaticResource PoppinsRegularBlack16}"
-                            Text="{i18n:Translate NoDevicesFoundInfo}" />
-
-                    </StackLayout>
+                    <ScrollView Orientation="Vertical"
+                            IsVisible="{Binding IsDevicesEmpty}">
+                        <StackLayout
+                            Orientation="Vertical"
+                            Spacing="20"
+                            VerticalOptions="Center">
+                            <Image
+                                HeightRequest="154"
+                                Source="car_battery"
+                                WidthRequest="154" />
+                            <Label
+                                HorizontalOptions="Center"
+                                Style="{StaticResource PoppinsRegularBlack20}"
+                                Text="{i18n:Translate NoDevicesFound}" />
+                            <Label
+                                HorizontalOptions="Center"
+                                Style="{StaticResource PoppinsRegularBlack16}"
+                                Text="{i18n:Translate NoDevicesFoundInfo}" />
+                        </StackLayout>
+                    </ScrollView>
                 </Grid>
-            </ScrollView>
+                
+                <Button
+                    Margin="0,20,0,0"
+                    x:Name="AddDevice"
+                    Command="{Binding AddDeviceCommand}"
+                    Style="{StaticResource ButtonLightBlue}"
+                    IsEnabled="True"
+                    Text="{i18n:Translate AddDevice}"
+                    VerticalOptions="StartAndExpand" />
 
-            <Button
-                Margin="0,20,0,0"
-                Command="{Binding AddDeviceCommand}"
-                Style="{StaticResource ButtonLightBlue}"
-                Text="{i18n:Translate AddDevice}"
-                VerticalOptions="StartAndExpand" />
+            </StackLayout>
 
         </StackLayout>
         

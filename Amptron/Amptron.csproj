@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net7.0-android;</TargetFrameworks>
+		<TargetFrameworks>net7.0-ios;</TargetFrameworks>
 		<!--<TargetFrameworks>net7.0-android;net7.0-ios;net7.0-maccatalyst</TargetFrameworks>-->
 		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
@@ -29,17 +29,25 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+		<Configurations>Release;Debug</Configurations>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
 	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	  <DebugSymbols>true</DebugSymbols>
+	  <WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-android|AnyCPU'">
+	  <AndroidPackageFormat>apk</AndroidPackageFormat>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-ios|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	</PropertyGroup>
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#FFFFFF" />
-
-		<!-- Splash Screen -->
-		<MauiFont Include="Resources\Fonts\*" />
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
@@ -49,12 +57,15 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 		<PackageReference Include="PropertyChanged.Fody" Version="4.1.0" />
 		<PackageReference Include="Plugin.BLE" Version="3.0.0" />
-		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
-		<PackageReference Include="CommunityToolkit.Maui" Version="5.3.0" />
-		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.2.0" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="6.1.0" />
+		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="3.3.1" />
 		<PackageReference Include="Mopups" Version="1.2.0" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 		<PackageReference Include="epj.Expander.Maui" Version="1.0.2" />
+		<PackageReference Include="Microcharts.Maui" Version="1.0.0" />
+		<PackageReference Include="SkiaSharp" Version="2.88.8" />
+		<PackageReference Include="SkiaSharp.Views.Maui.Core" Version="2.88.8" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -132,13 +143,14 @@
 	  <None Remove="ViewModels\CustomViews\" />
 	  <None Remove="Resources\Images\addcircle.png" />
 	  <None Remove="Resources\Images\refresh.svg" />
+	  <None Remove="Resources\Images\battery.svg" />
+	  <None Remove="Resources\Images\bluetoothicon.svg" />
+	  <None Remove="Resources\Images\bluetoothiconwhite.svg" />
+	  <None Remove="Resources\Images\temperatureicon.png" />
+	  <None Remove="Resources\Fonts\OpenSans-Regular.ttf" />
+	  <None Remove="Resources\Fonts\OpenSans-Semibold.ttf" />
 	</ItemGroup>
 	<ItemGroup>
-	  <BundleResource Include="Resources\Fonts\Poppins-Bold.ttf" />
-	  <BundleResource Include="Resources\Fonts\Poppins-Medium.ttf" />
-	  <BundleResource Include="Resources\Fonts\Poppins-Regular.ttf" />
-	  <BundleResource Include="Resources\Fonts\Poppins-SemiBold.ttf" />
-	  <BundleResource Include="Resources\Images\about.svg" />
 	  <BundleResource Include="Resources\Images\about.svg" />
 	  <BundleResource Include="Resources\Images\aboutus.png" />
 	  <BundleResource Include="Resources\Images\amptron_company.png" />
@@ -147,9 +159,7 @@
 	  <BundleResource Include="Resources\Images\back.png" />
 	  <BundleResource Include="Resources\Images\battery_image.png" />
 	  <BundleResource Include="Resources\Images\bluetooth.png" />
-	  <BundleResource Include="Resources\Images\bluetooth.png" />
 	  <BundleResource Include="Resources\Images\call.png" />
-	  <BundleResource Include="Resources\Images\car_battery.png" />
 	  <BundleResource Include="Resources\Images\car_battery.png" />
 	  <BundleResource Include="Resources\Images\chevron_left.png" />
 	  <BundleResource Include="Resources\Images\chevron_right.png" />
@@ -194,7 +204,6 @@
 	  <BundleResource Include="Resources\Images\statusicon.png" />
 	  <BundleResource Include="Resources\Images\switch_off.png" />
 	  <BundleResource Include="Resources\Images\switch_on.png" />
-	  <BundleResource Include="Resources\Images\voltage.png" />
 	  <BundleResource Include="Resources\Images\voltage.png" />
 	  <BundleResource Include="Resources\Images\voltageicon.png" />
 	  <BundleResource Include="Resources\Images\warning_icon.png" />
@@ -268,8 +277,24 @@
 	  <MauiImage Include="Resources\Images\chevron_right.png" />
 	  <MauiImage Include="Resources\Images\chevron_left.png" />
 	  <MauiImage Include="Resources\Images\refresh.svg" />
+	  <MauiImage Include="Resources\Images\car_battery.png" />
+	  <MauiImage Include="Resources\Images\bluetooth.png" />
+	  <MauiImage Include="Resources\Images\battery.svg" />
+	  <MauiImage Include="Resources\Images\bluetoothicon.svg" />
+	  <MauiImage Include="Resources\Images\bluetoothiconwhite.svg" />
+	  <MauiImage Include="Resources\Images\voltage.png" />
+	  <MauiImage Include="Resources\Images\temperatureicon.png" />
+	  <MauiImage Include="Resources\Images\about.svg" />
 	</ItemGroup>
 	<ItemGroup>
 	  <EmbeddedResource Include="Resources\Raw\AppResources.Designer.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+	</ItemGroup>
+	<ItemGroup>
+	  <MauiFont Include="Resources\Fonts\OpenSans-Regular.ttf" />
+	  <MauiFont Include="Resources\Fonts\OpenSans-Semibold.ttf" />
+	  <MauiFont Include="Resources\Fonts\Poppins-Bold.ttf" />
+	  <MauiFont Include="Resources\Fonts\Poppins-Medium.ttf" />
+	  <MauiFont Include="Resources\Fonts\Poppins-Regular.ttf" />
+	  <MauiFont Include="Resources\Fonts\Poppins-SemiBold.ttf" />
 	</ItemGroup>
 </Project>

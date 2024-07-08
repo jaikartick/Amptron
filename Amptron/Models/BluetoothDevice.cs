@@ -15,6 +15,7 @@ namespace Amptron.Models
         public string DeviceCode { get; set; }
         public bool IsSelected { get; set; }
         public int NoOfCycles { get; set; }
+        public Guid BluetoothId { get; set; }
 
         public string Version { get; set; }
 

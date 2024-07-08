@@ -46,6 +46,13 @@
                 Style="{StaticResource ButtonLightBlue}"
                 Text="{i18n:Translate GetStarted}"
                 VerticalOptions="StartAndExpand" />
+
+            <Button
+                Margin="37,10"
+                Command="{Binding NavigateToHistoryCommand}"
+                Style="{StaticResource ButtonLightBlue}"
+                Text="History"
+                VerticalOptions="StartAndExpand" />
         </VerticalStackLayout>
         <controls:CustomAmptronFrame
             Grid.Row="2"

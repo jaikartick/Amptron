@@ -19,6 +19,12 @@ namespace Amptron.ViewModels.Menu
         public string VoltageUpdatedStatus { get; set; }
         public string StatusUpdatedStatus { get; set; }
 
+        public double T1 { get; set; }
+        public double T2 { get; set; }
+        public double T3 { get; set; }
+        public double T4 { get; set; }
+        public double MOS { get; set; }
+
         public DashboardViewModel()
         {
             //Power = 0.00;
@@ -32,6 +38,12 @@ namespace Amptron.ViewModels.Menu
 
             Status = "Standby";
             StatusUpdatedStatus = "Just Updated";
+
+            MOS = 0.0;
+            T1 = 0.0;
+            T2 = 0.0;
+            T3 = 0.0;
+            T4 = 0.0;
 
             SocPercentage = 70;
 

@@ -17,6 +17,12 @@ namespace Amptron.ViewModels
         }
 
         [RelayCommand]
+        private async Task NavigateToHistory()
+        {
+            await NavigationService.NavigateToAsync<HistoryViewModel>(typeof(HistoryPage));
+        }
+
+        [RelayCommand]
         private async Task NavigateToFaq()
         {
             await NavigationService.NavigateToAsync<FaqViewModel>(typeof(FaqPage));

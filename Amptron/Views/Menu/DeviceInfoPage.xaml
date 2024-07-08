@@ -200,6 +200,12 @@
                 Text="{Binding Device.NoOfCycles}"
                 VerticalOptions="Center" />
             <Label
+                Grid.Row="4"
+                Grid.Column="2"
+                Style="{StaticResource PoppinsRegularBlack17}"
+                Text="{Binding Device.BluetoothId}"
+                VerticalOptions="Center" />
+            <Label
                 Grid.Row="3"
                 Grid.Column="2"
                 Style="{StaticResource PoppinsRegularBlack17}"

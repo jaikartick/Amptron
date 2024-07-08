@@ -6,4 +6,10 @@ public partial class DeviceListPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        this.AddDevice.IsEnabled = true;
+    }
 }

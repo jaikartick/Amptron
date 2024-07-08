@@ -37,264 +37,342 @@
                     </Image>
                 </StackLayout>
             </StackLayout>
-            <ScrollView>
-                <StackLayout Orientation="Vertical">
-                    <Grid Margin="0,0,0,10" ColumnDefinitions="0.43*,0.57*" HeightRequest="120">
-                        <compatibility:RelativeLayout
+            <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Never" VerticalOptions="FillAndExpand">
+                <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
+                    <Grid Margin="0,0,0,10" ColumnDefinitions="0.4*,0.6*" HeightRequest="160">
+                        <Grid
                             Grid.Column="0"
-                            HorizontalOptions="CenterAndExpand"
+                            HorizontalOptions="FillAndExpand"
                             VerticalOptions="Fill">
                             <Image
                                 x:Name="SocImage"
                                 HorizontalOptions="Start"
+                                Margin="-35,0,20,0"
                                 Scale="1"
                                 Source="soc" />
                             <Label
-                                HorizontalOptions="Center"
-                                compatibility:RelativeLayout.XConstraint="{compatibility:ConstraintExpression Type=RelativeToView,
-                                                                                  ElementName=SocImage,
-                                                                                  Property=Width,
-                                                                                  Factor=0.5,
-                                                                                  Constant=-15}"
-                                compatibility:RelativeLayout.YConstraint="{compatibility:ConstraintExpression Type=RelativeToView,
-                                                                                  ElementName=SocImage,
-                                                                                  Property=Height,
-                                                                                  Factor=0.65}"
+                                HorizontalOptions="FillAndExpand"
+                                HorizontalTextAlignment="Center"
                                 Text="{Binding SocPercentage, StringFormat='{0}%'}"
-                                TextColor="White"
-                                WidthRequest="50" />
-                        </compatibility:RelativeLayout>
-                        <StackLayout Grid.Column="1" Orientation="Vertical" VerticalOptions="Center">
-                            <Label Style="{StaticResource PoppinsBoldDimGray18}" Text="{i18n:Translate RatedCapacity}" />
-                            <Label Style="{StaticResource PoppinsRegularDimGray16}" Text="{Binding RatedCapacity, StringFormat='{0} Ah'}" />
-
-                            <Label Style="{StaticResource PoppinsBoldDimGray18}" Text="{i18n:Translate RemainingCapacity}" />
-                            <Label Style="{StaticResource PoppinsRegularDimGray16}" Text="{Binding RemainingCapacity, StringFormat='{0} Ah'}" />
+                                VerticalOptions="FillAndExpand"
+                                VerticalTextAlignment="End"
+                                Margin="38,0,0,35"
+                                TextColor="White"/>
+                        </Grid>
+                        <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="End" VerticalOptions="Center">
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{i18n:Translate RatedCapacity}" Style="{StaticResource PoppinsBoldDimGray14}"/>
+                                        <Span Style="{StaticResource PoppinsRegularDimGray12}" Text="{Binding RatedCapacity, StringFormat=' {0} Ah'}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{i18n:Translate RemainingCapacity}" Style="{StaticResource PoppinsBoldDimGray14}"/>
+                                        <Span Style="{StaticResource PoppinsRegularDimGray12}" Text="{Binding RemainingCapacity, StringFormat=' {0} Ah'}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
                         </StackLayout>
                     </Grid>
-                    <StackLayout
-                        Margin="0,0,0,30"
-                        Orientation="Vertical"
-                        Spacing="30"
-                        VerticalOptions="FillAndExpand">
-                        <Grid HeightRequest="92" VerticalOptions="Start">
-                            <Frame
-                                Margin="2"
-                                Padding="0"
-                                BackgroundColor="White"
-                                BorderColor="Black"
-                                HasShadow="True"
-                                HeightRequest="80">
-                                <Frame.Shadow>
-                                    <Shadow Radius="5" />
-                                </Frame.Shadow>
-                                <Grid
-                                    Margin="10"
-                                    ColumnDefinitions="*, Auto"
-                                    RowDefinitions="Auto,0.4*,0.6*"
-                                    RowSpacing="0">
-                                    <Label
-                                        Style="{StaticResource PoppinsRegularBlack20}"
-                                        Text="{i18n:Translate Power}"
-                                        VerticalOptions="Center" />
-                                    <Label
-                                        Grid.Row="1"
-                                        Grid.RowSpan="2"
-                                        Style="{StaticResource PoppinsRegularDimGray32}"
-                                        Text="{Binding Power, StringFormat='{0:F2}  W'}"
-                                        VerticalOptions="Fill" />
-                                    <Label
-                                        Grid.Row="2"
-                                        Grid.Column="1"
-                                        Style="{StaticResource PoppinsRegularDimGray12}"
-                                        Text="{Binding PowerUpdatedStatus}"
-                                        VerticalOptions="Center" />
-                                </Grid>
-                            </Frame>
-                            <Frame
-                                Margin="0,-15,0,0"
-                                Padding="0"
-                                BackgroundColor="{StaticResource ColorLightBlue}"
-                                CornerRadius="0"
-                                HasShadow="False"
-                                HeightRequest="67"
-                                HorizontalOptions="End"
-                                VerticalOptions="Start"
-                                WidthRequest="80">
-                                <Image
-                                    HeightRequest="35"
-                                    HorizontalOptions="Center"
-                                    Source="powericon"
-                                    VerticalOptions="Center"
-                                    WidthRequest="35" />
-                            </Frame>
-                        </Grid>
-                        <Grid HeightRequest="92" VerticalOptions="Fill">
-                            <Frame
-                                Margin="2"
-                                Padding="0"
-                                BackgroundColor="White"
-                                BorderColor="Black"
-                                HasShadow="True">
-                                <Frame.Shadow>
-                                    <Shadow Radius="5" />
-                                </Frame.Shadow>
-                                <Grid
-                                    Margin="10"
-                                    ColumnDefinitions="Auto, *"
-                                    RowDefinitions="Auto,0.4*,0.6*"
-                                    RowSpacing="0">
-                                    <Label
-                                        Grid.Column="1"
-                                        HorizontalOptions="End"
-                                        Style="{StaticResource PoppinsRegularBlack20}"
-                                        Text="{i18n:Translate DischargeCurrent}"
-                                        VerticalOptions="Center" />
-                                    <Label
-                                        Grid.Row="1"
-                                        Grid.RowSpan="2"
-                                        Grid.Column="1"
-                                        HorizontalOptions="End"
-                                        Style="{StaticResource PoppinsRegularDimGray32}"
-                                        Text="{Binding Current, StringFormat='{0:F2}  A'}"
-                                        VerticalOptions="Fill" />
-                                    <Label
-                                        Grid.Row="2"
-                                        Grid.Column="0"
-                                        Style="{StaticResource PoppinsRegularDimGray12}"
-                                        Text="{Binding CurrentUpdatedStatus}"
-                                        VerticalOptions="Center" />
-                                </Grid>
-                            </Frame>
-                            <Frame
-                                Margin="0,-15,0,0"
-                                Padding="0"
-                                BackgroundColor="{StaticResource ColorGreen}"
-                                CornerRadius="0"
-                                HasShadow="False"
-                                HeightRequest="67"
-                                HorizontalOptions="Start"
-                                VerticalOptions="Start"
-                                WidthRequest="80">
-                                <Image
-                                    HeightRequest="35"
-                                    HorizontalOptions="Center"
-                                    Source="currenticon"
-                                    VerticalOptions="Center"
-                                    WidthRequest="35" />
-                            </Frame>
-                        </Grid>
-                        <Grid HeightRequest="92" VerticalOptions="Fill">
+                        <StackLayout Orientation="Vertical" Spacing="25" Margin="0,0">
+                            <Grid RowSpacing="10" ColumnSpacing="10" RowDefinitions="0.5*, 0.5*" ColumnDefinitions="0.5*, 0.5*" MaximumHeightRequest="320" VerticalOptions="FillAndExpand">
+                                <Border StrokeShape="RoundRectangle 10" HeightRequest="100" Grid.Row="0" Grid.Column="0">
+                                    <HorizontalStackLayout Padding="10" Spacing="10">
+                                        <Border StrokeShape="RoundRectangle 20" Padding="10" WidthRequest="40" HeightRequest="40" BackgroundColor="LimeGreen">
+                                            <Image Source="powericon.png"/>
+                                        </Border>
+                                        <VerticalStackLayout VerticalOptions="Center">
+                                            <Label Style="{StaticResource PoppinsRegularBlack16}"
+                                                   LineBreakMode="WordWrap"
+                                                   HorizontalOptions="Start"
+                                                   MaximumWidthRequest="100"
+                                                   MaxLines="2"
+                                                Text="{i18n:Translate RunningStatus}"/>
+                                            <Label Style="{StaticResource PoppinsRegularDimGray20}"
+                                                Text="{Binding Status}"/>
+                                        </VerticalStackLayout>
+                                    </HorizontalStackLayout>
+                                </Border>
+                                <Border StrokeShape="RoundRectangle 10" Grid.Column="1" HeightRequest="100">
+                                    <HorizontalStackLayout Padding="10" Spacing="10">
+                                        <Border StrokeShape="RoundRectangle 20" Padding="10" WidthRequest="40" HeightRequest="40" BackgroundColor="LimeGreen">
+                                            <Image Source="powericon.png"/>
+                                        </Border>
+                                        <VerticalStackLayout VerticalOptions="Center">
+                                            <Label Style="{StaticResource PoppinsRegularBlack16}"
+                                                Text="{i18n:Translate Voltage}"/>
+                                            <Label Style="{StaticResource PoppinsRegularDimGray20}"
+                                                Text="{Binding Voltage, StringFormat='{0:F2}  V'}"/>
+                                        </VerticalStackLayout>
+                                    </HorizontalStackLayout>
+                                </Border>
+                                <Border StrokeShape="RoundRectangle 10" Grid.Row="1" HeightRequest="100">
+                                    <HorizontalStackLayout Padding="10" Spacing="10">
+                                        <Border StrokeShape="RoundRectangle 20" Padding="10" WidthRequest="40" HeightRequest="40" BackgroundColor="LimeGreen">
+                                            <Image Source="powericon.png"/>
+                                        </Border>
+                                        <VerticalStackLayout VerticalOptions="Center">
+                                            <Label Style="{StaticResource PoppinsRegularBlack16}"
+                                                Text="{i18n:Translate DischargeCurrent}"/>
+                                            <Label Style="{StaticResource PoppinsRegularDimGray20}"
+                                                Text="{Binding Current, StringFormat='{0:F2}  A'}"/>
+                                        </VerticalStackLayout>
+                                    </HorizontalStackLayout>
+                                </Border>
+                                <Border StrokeShape="RoundRectangle 10" Grid.Row="1" Grid.Column="1" HeightRequest="100">
+                                    <HorizontalStackLayout Padding="10" Spacing="10">
+                                        <Border StrokeShape="RoundRectangle 20" Padding="10" WidthRequest="40" HeightRequest="40" BackgroundColor="LimeGreen">
+                                            <Image Source="powericon.png"/>
+                                        </Border>
+                                        <VerticalStackLayout VerticalOptions="Center">
+                                            <Label Style="{StaticResource PoppinsRegularBlack16}"
+                                                Text="{i18n:Translate Power}"/>
+                                            <Label Style="{StaticResource PoppinsRegularDimGray20}"
+                                                Text="{Binding Power, StringFormat='{0:F2}  W'}"/>
+                                        </VerticalStackLayout>
+                                    </HorizontalStackLayout>
+                                </Border>
+                            </Grid>
+                            <Grid RowDefinitions="0.33*, 0.33*, 0.33*" HeightRequest="100" ColumnDefinitions="Auto, Auto, *, Auto, Auto" RowSpacing="10" ColumnSpacing="10">
+                                <Label Text="{i18n:Translate MOS}" Style="{StaticResource PoppinsRegularBlack16}"/>
+                                <Label Text="{Binding MOS, StringFormat='{0:F1} &#176;C'}" Grid.Row="0" Grid.Column="1" />
+                                <Label Text="{i18n:Translate T1}" Grid.Row="1" Style="{StaticResource PoppinsRegularBlack16}" HorizontalTextAlignment="End"/>
+                                <Label Text="{Binding T1, StringFormat='{0:F1} &#176;C'}" Grid.Row="1" Grid.Column="1" />
+                                <Label Text="{i18n:Translate T2}" Grid.Row="1" Grid.Column="3" Style="{StaticResource PoppinsRegularBlack16}" HorizontalTextAlignment="End"/>
+                                <Label Text="{Binding T1, StringFormat='{0:F1} &#176;C'}" Grid.Row="1" Grid.Column="4"/>
 
-                            <Frame
-                                Margin="2"
-                                Padding="0"
-                                BackgroundColor="White"
-                                BorderColor="Black"
-                                HasShadow="True">
-                                <Frame.Shadow>
-                                    <Shadow Radius="5" />
-                                </Frame.Shadow>
-                                <Grid
-                                    Margin="10,10,10,5"
-                                    ColumnDefinitions="*, Auto"
-                                    HeightRequest="80"
-                                    RowDefinitions="Auto,0.4*,0.6*"
-                                    RowSpacing="0">
-                                    <Label
-                                        Style="{StaticResource PoppinsRegularBlack20}"
-                                        Text="{i18n:Translate Voltage}"
-                                        VerticalOptions="Center" />
-                                    <Label
-                                        Grid.Row="1"
-                                        Grid.RowSpan="2"
-                                        Style="{StaticResource PoppinsRegularDimGray32}"
-                                        Text="{Binding Voltage, StringFormat='{0:F2}  V'}"
-                                        VerticalOptions="Fill" />
-                                    <Label
-                                        Grid.Row="2"
-                                        Grid.Column="1"
-                                        Style="{StaticResource PoppinsRegularDimGray12}"
-                                        Text="{Binding VoltageUpdatedStatus}"
-                                        VerticalOptions="Center" />
-                                </Grid>
-                            </Frame>
+                                <Image Source="temperatureicon" Grid.Row="0" Grid.Column="2" Grid.RowSpan="3"/>
+                                <Label Text="{i18n:Translate T3}" Grid.Row="2" Style="{StaticResource PoppinsRegularBlack16}" HorizontalTextAlignment="End"/>
+                                <Label Text="{Binding T1, StringFormat='{0:F1} &#176;C'}" Grid.Row="2" Grid.Column="1"/>
+                            
+                                <Label Text="{i18n:Translate T4}" Grid.Row="2" Grid.Column="3" Style="{StaticResource PoppinsRegularBlack16}" HorizontalTextAlignment="End"/>
+                                <Label Text="{Binding T1, StringFormat='{0:F1} &#176;C'}" Grid.Row="2" Grid.Column="4"/>
+                            </Grid>
+                            <Grid HeightRequest="92" VerticalOptions="Fill">
+                                <Frame
+                                    Margin="2"
+                                    Padding="0"
+                                    BackgroundColor="White"
+                                    BorderColor="Black"
+                                    HasShadow="True"
+                                    HeightRequest="80">
+                                    <Frame.Shadow>
+                                        <Shadow Radius="5" />
+                                    </Frame.Shadow>
+                                    <Grid
+                                        Margin="10"
+                                        ColumnDefinitions="*, Auto"
+                                        RowDefinitions="Auto,0.4*,0.6*"
+                                        RowSpacing="0">
+                                        <Label
+                                            Style="{StaticResource PoppinsRegularBlack20}"
+                                            Text="{i18n:Translate Power}"
+                                            VerticalOptions="Center" />
+                                        <Label
+                                            Grid.Row="1"
+                                            Grid.RowSpan="2"
+                                            Style="{StaticResource PoppinsRegularDimGray32}"
+                                            Text="{Binding Power, StringFormat='{0:F2}  W'}"
+                                            VerticalOptions="Fill" />
+                                        <Label
+                                            Grid.Row="2"
+                                            Grid.Column="1"
+                                            Style="{StaticResource PoppinsRegularDimGray12}"
+                                            Text="{Binding PowerUpdatedStatus}"
+                                            VerticalOptions="Center" />
+                                    </Grid>
+                                </Frame>
+                                <Frame
+                                    Margin="0,-15,0,0"
+                                    Padding="0"
+                                    BackgroundColor="{StaticResource ColorLightBlue}"
+                                    CornerRadius="0"
+                                    HasShadow="False"
+                                    HeightRequest="67"
+                                    HorizontalOptions="End"
+                                    VerticalOptions="Start"
+                                    WidthRequest="80">
+                                    <Image
+                                        HeightRequest="35"
+                                        HorizontalOptions="Center"
+                                        BackgroundColor="Black"
+                                        Source="powericon"
+                                        VerticalOptions="Center"
+                                        WidthRequest="35" />
+                                </Frame>
+                            </Grid>
+                            <Grid HeightRequest="92" VerticalOptions="Fill">
+                                <Frame
+                                    Margin="2"
+                                    Padding="0"
+                                    BackgroundColor="White"
+                                    BorderColor="Black"
+                                    HasShadow="True">
+                                    <Frame.Shadow>
+                                        <Shadow Radius="5" />
+                                    </Frame.Shadow>
+                                    <Grid
+                                        Margin="10"
+                                        ColumnDefinitions="Auto, *"
+                                        RowDefinitions="Auto,0.4*,0.6*"
+                                        RowSpacing="0">
+                                        <Label
+                                            Grid.Column="1"
+                                            HorizontalOptions="End"
+                                            Style="{StaticResource PoppinsRegularBlack20}"
+                                            Text="{i18n:Translate DischargeCurrent}"
+                                            VerticalOptions="Center" />
+                                        <Label
+                                            Grid.Row="1"
+                                            Grid.RowSpan="2"
+                                            Grid.Column="1"
+                                            HorizontalOptions="End"
+                                            Style="{StaticResource PoppinsRegularDimGray32}"
+                                            Text="{Binding Current, StringFormat='{0:F2}  A'}"
+                                            VerticalOptions="Fill" />
+                                        <Label
+                                            Grid.Row="2"
+                                            Grid.Column="0"
+                                            Style="{StaticResource PoppinsRegularDimGray12}"
+                                            Text="{Binding CurrentUpdatedStatus}"
+                                            VerticalOptions="Center" />
+                                    </Grid>
+                                </Frame>
+                                <Frame
+                                    Margin="0,-15,0,0"
+                                    Padding="0"
+                                    BackgroundColor="{StaticResource ColorGreen}"
+                                    CornerRadius="0"
+                                    HasShadow="False"
+                                    HeightRequest="67"
+                                    HorizontalOptions="Start"
+                                    VerticalOptions="Start"
+                                    WidthRequest="80">
+                                    <Image
+                                        HeightRequest="35"
+                                        HorizontalOptions="Center"
+                                        BackgroundColor="Black"
+                                        Source="currenticon.png"
+                                        VerticalOptions="Center"
+                                        WidthRequest="35" />
+                                </Frame>
+                            </Grid>
+                            <Grid HeightRequest="92" VerticalOptions="Fill">
 
-                            <Frame
-                                Margin="0,-15,0,0"
-                                Padding="0"
-                                BackgroundColor="{StaticResource ColorRed}"
-                                CornerRadius="0"
-                                HasShadow="False"
-                                HeightRequest="67"
-                                HorizontalOptions="End"
-                                VerticalOptions="Start"
-                                WidthRequest="80">
-                                <Image
-                                    HeightRequest="35"
-                                    HorizontalOptions="Center"
-                                    Source="voltageicon"
-                                    VerticalOptions="Center"
-                                    WidthRequest="35" />
-                            </Frame>
-                        </Grid>
-                        <Grid HeightRequest="92" VerticalOptions="Fill">
-                            <Frame
-                                Margin="2"
-                                Padding="0"
-                                BackgroundColor="White"
-                                BorderColor="Black"
-                                HasShadow="True">
-                                <Frame.Shadow>
-                                    <Shadow Radius="5" />
-                                </Frame.Shadow>
-                                <Grid
-                                    Margin="10,10,10,5"
-                                    ColumnDefinitions="Auto, *"
-                                    HeightRequest="80"
-                                    RowDefinitions="Auto,0.4*,0.6*"
-                                    RowSpacing="0">
-                                    <Label
-                                        Grid.Column="1"
-                                        HorizontalOptions="End"
-                                        Style="{StaticResource PoppinsRegularBlack20}"
-                                        Text="{i18n:Translate RunningStatus}"
-                                        VerticalOptions="Center" />
-                                    <Label
-                                        Grid.Row="1"
-                                        Grid.RowSpan="2"
-                                        Grid.Column="1"
-                                        HorizontalOptions="End"
-                                        Style="{StaticResource PoppinsRegularDimGray32}"
-                                        Text="{Binding Status}"
-                                        VerticalOptions="Fill" />
-                                    <Label
-                                        Grid.Row="2"
-                                        Grid.Column="0"
-                                        Style="{StaticResource PoppinsRegularDimGray12}"
-                                        Text="{Binding StatusUpdatedStatus}"
-                                        VerticalOptions="Center" />
-                                </Grid>
-                            </Frame>
-                            <Frame
-                                Margin="0,-15,0,0"
-                                Padding="0"
-                                BackgroundColor="{StaticResource ColorYellow}"
-                                CornerRadius="0"
-                                HasShadow="False"
-                                HeightRequest="67"
-                                HorizontalOptions="Start"
-                                VerticalOptions="Start"
-                                WidthRequest="80">
-                                <Image
-                                    HeightRequest="35"
-                                    HorizontalOptions="Center"
-                                    Source="statusicon"
-                                    VerticalOptions="Center"
-                                    WidthRequest="35" />
-                            </Frame>
-                        </Grid>
-                    </StackLayout>
+                                <Frame
+                                    Margin="2"
+                                    Padding="0"
+                                    BackgroundColor="White"
+                                    BorderColor="Black"
+                                    HasShadow="True">
+                                    <Frame.Shadow>
+                                        <Shadow Radius="5" />
+                                    </Frame.Shadow>
+                                    <Grid
+                                        Margin="10,10,10,5"
+                                        ColumnDefinitions="*, Auto"
+                                        HeightRequest="80"
+                                        RowDefinitions="Auto,0.4*,0.6*"
+                                        RowSpacing="0">
+                                        <Label
+                                            Style="{StaticResource PoppinsRegularBlack20}"
+                                            Text="{i18n:Translate Voltage}"
+                                            VerticalOptions="Center" />
+                                        <Label
+                                            Grid.Row="1"
+                                            Grid.RowSpan="2"
+                                            Style="{StaticResource PoppinsRegularDimGray32}"
+                                            Text="{Binding Voltage, StringFormat='{0:F2}  V'}"
+                                            VerticalOptions="Fill" />
+                                        <Label
+                                            Grid.Row="2"
+                                            Grid.Column="1"
+                                            Style="{StaticResource PoppinsRegularDimGray12}"
+                                            Text="{Binding VoltageUpdatedStatus}"
+                                            VerticalOptions="Center" />
+                                    </Grid>
+                                </Frame>
+
+                                <Frame
+                                    Margin="0,-15,0,0"
+                                    Padding="0"
+                                    BackgroundColor="{StaticResource ColorRed}"
+                                    CornerRadius="0"
+                                    HasShadow="False"
+                                    HeightRequest="67"
+                                    HorizontalOptions="End"
+                                    VerticalOptions="Start"
+                                    WidthRequest="80">
+                                    <Image
+                                        HeightRequest="35"
+                                        HorizontalOptions="Center"
+                                        Source="voltageicon"
+                                        VerticalOptions="Center"
+                                        WidthRequest="35" />
+                                </Frame>
+                            </Grid>
+                            <Grid HeightRequest="92" VerticalOptions="Fill">
+                                <Frame
+                                    Margin="2"
+                                    Padding="0"
+                                    BackgroundColor="White"
+                                    BorderColor="Black"
+                                    HasShadow="True">
+                                    <Frame.Shadow>
+                                        <Shadow Radius="5" />
+                                    </Frame.Shadow>
+                                    <Grid
+                                        Margin="10,10,10,5"
+                                        ColumnDefinitions="Auto, *"
+                                        HeightRequest="80"
+                                        RowDefinitions="Auto,0.4*,0.6*"
+                                        RowSpacing="0">
+                                        <Label
+                                            Grid.Column="1"
+                                            HorizontalOptions="End"
+                                            Style="{StaticResource PoppinsRegularBlack20}"
+                                            Text="{i18n:Translate RunningStatus}"
+                                            VerticalOptions="Center" />
+                                        <Label
+                                            Grid.Row="1"
+                                            Grid.RowSpan="2"
+                                            Grid.Column="1"
+                                            HorizontalOptions="End"
+                                            Style="{StaticResource PoppinsRegularDimGray32}"
+                                            Text="{Binding Status}"
+                                            VerticalOptions="Fill" />
+                                        <Label
+                                            Grid.Row="2"
+                                            Grid.Column="0"
+                                            Style="{StaticResource PoppinsRegularDimGray12}"
+                                            Text="{Binding StatusUpdatedStatus}"
+                                            VerticalOptions="Center" />
+                                    </Grid>
+                                </Frame>
+                                <Frame
+                                    Margin="0,-15,0,0"
+                                    Padding="0"
+                                    BackgroundColor="{StaticResource ColorYellow}"
+                                    CornerRadius="0"
+                                    HasShadow="False"
+                                    HeightRequest="67"
+                                    HorizontalOptions="Start"
+                                    VerticalOptions="Start"
+                                    WidthRequest="80">
+                                    <Image
+                                        HeightRequest="35"
+                                        HorizontalOptions="Center"
+                                        Source="statusicon"
+                                        VerticalOptions="Center"
+                                        WidthRequest="35" />
+                                </Frame>
+                            </Grid>
+                        </StackLayout>
+
                 </StackLayout>
             </ScrollView>
         </StackLayout>

@@ -13,7 +13,7 @@
 		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
 	</resheader>
 	<data name="Onboarding_View1Content" xml:space="preserve">
-        <value>Welcome to the AMPTRON Link App. The app’s main functionality is to monitor details of the Amptron BluPower batteries. </value>
+        <value>Welcome to the AMPTRON Link App. The app’s main functionality is to monitor details of Amptron Compatible devices. </value>
     </data>
 	<data name="Onboarding_View2Content" xml:space="preserve">
         <value>First search for a device on the Device list page and connect to the device. To switch between devices, select a different device on the list. </value>
@@ -190,7 +190,7 @@
 		<value>Voltage</value>
     </data>
 	<data name="DischargeCurrent" xml:space="preserve">
-		<value>Discharge Current</value>
+		<value>Current</value>
     </data>
 	<data name="DetailedView" xml:space="preserve">
 		<value>Detailed View</value>
@@ -257,6 +257,33 @@
     </data>
 	<data name="Add" xml:space="preserve">
 		<value>Add</value>
+    </data>
+	<data name="MOS" xml:space="preserve">
+		<value>MOS</value>
+    </data>
+	<data name="T1" xml:space="preserve">
+		<value>T1</value>
+    </data>
+	<data name="T2" xml:space="preserve">
+		<value>T2</value>
+    </data>
+	<data name="T3" xml:space="preserve">
+		<value>T3</value>
+    </data>
+	<data name="T4" xml:space="preserve">
+		<value>T4</value>
+    </data>
+	<data name="BatteryVoltage" xml:space="preserve">
+		<value>Battery Voltage</value>
+    </data>
+	<data name="VoltageDifference" xml:space="preserve">
+		<value>Voltage Difference</value>
+    </data>
+	<data name="MinimumVoltage" xml:space="preserve">
+		<value>Min Voltage</value>
+    </data>
+	<data name="MaximumVoltage" xml:space="preserve">
+		<value>Max Voltage</value>
     </data>
 </root>
 

@@ -69,12 +69,15 @@
             </StackLayout>
         </Frame>
         <Grid>
-            <StackLayout
+            <CollectionView
+                MaximumHeightRequest="300"
                 Margin="0,20,0,0"
-                BindableLayout.ItemsSource="{Binding Devices}"
-                HorizontalOptions="FillAndExpand"
-                Spacing="20">
-                <BindableLayout.ItemTemplate>
+                ItemsSource="{Binding Devices}"
+                HorizontalOptions="FillAndExpand">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="20"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:BluetoothDevice">
                         <customviews:DeviceView Device="{Binding .}" StatusColor="Green">
                             <customviews:DeviceView.GestureRecognizers>
@@ -82,8 +85,8 @@
                             </customviews:DeviceView.GestureRecognizers>
                         </customviews:DeviceView>
                     </DataTemplate>
-                </BindableLayout.ItemTemplate>
-            </StackLayout>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
             <ActivityIndicator
                 x:Name="IsBusyIndicator"
                 IsVisible="{Binding IsBusy}"

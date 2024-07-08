@@ -45,7 +45,7 @@ namespace Amptron.ViewModels
         private string _selectedLang;
 
         [RelayCommand]
-        private async void NavigateBack()
+        public async void NavigateBack()
         {
             await NavigationService.GoBackAsync();
         }

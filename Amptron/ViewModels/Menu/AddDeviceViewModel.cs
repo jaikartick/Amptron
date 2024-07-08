@@ -70,7 +70,7 @@ namespace Amptron.ViewModels.Menu
             }
             var discoveredDevices = _bluetoothAdapter.DiscoveredDevices;
             foreach (var device in discoveredDevices)
-            {
+            { 
                 if (!_allDevices.Any(d => d.Id.Equals(device.Id)))
                 {
                     _allDevices.Add(device);
@@ -91,7 +91,9 @@ namespace Amptron.ViewModels.Menu
                 }
             }
 
-            var pairedDevices = _bluetoothAdapter.GetSystemConnectedOrPairedDevices();
+            IReadOnlyList<IDevice> pairedDevices = null;
+            pairedDevices = _bluetoothAdapter.GetSystemConnectedOrPairedDevices(Array.Empty<Guid>());
+
             foreach (var device in pairedDevices)
             {
                 if (!_allDevices.Any(d => d.Id.Equals(device.Id)))
@@ -151,10 +153,13 @@ namespace Amptron.ViewModels.Menu
 
         private async void _bluetoothAdapter_DeviceDiscovered(object sender, Plugin.BLE.Abstractions.EventArgs.DeviceEventArgs e)
         {
+            if (!e.Device.IsConnectable)
+            {
+                return;
+            }
             if (e.Device != null && !_allDevices.Any(d => d.Id.Equals(e.Device.Id)))
             {
                 _allDevices.Add(e.Device);
-                var service =  await e.Device.GetServicesAsync();
                 if (!Devices.Any(d => d.DeviceId.Equals(e.Device.Id)) && !_existingDevices.Any(d => d.Equals(e.Device.Id)))
                 {
                     if (!string.IsNullOrWhiteSpace(SearchText))

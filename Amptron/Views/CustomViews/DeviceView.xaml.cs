@@ -14,6 +14,14 @@ public partial class DeviceView : ContentView
         set => SetValue(StatusColorProperty, value);
     }
 
+    public static readonly BindableProperty IsOnProperty = BindableProperty.Create(nameof(IsOn), typeof(bool), typeof(DeviceView), false, BindingMode.TwoWay);
+
+    public bool IsOn
+    {
+        get => (bool)GetValue(IsOnProperty);
+        set => SetValue(IsOnProperty, value);
+    }
+
     public static readonly BindableProperty DeviceProperty = BindableProperty.Create(nameof(Device), typeof(BluetoothDevice), typeof(DeviceView), null, BindingMode.OneWay, propertyChanged: OnDeviceChanged);
 
     public BluetoothDevice Device
@@ -33,5 +41,15 @@ public partial class DeviceView : ContentView
     public DeviceView()
     {
         InitializeComponent();
+    }
+
+    void TurnToOn(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
+    {
+        IsOn = true;
+    }
+
+    void TurnToOff(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
+    {
+        IsOn = false;
     }
 }

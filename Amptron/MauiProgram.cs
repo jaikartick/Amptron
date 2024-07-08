@@ -2,6 +2,7 @@
 using Amptron.Helpers;
 using CommunityToolkit.Maui;
 using CommunityToolkit.Maui.Markup;
+using Microcharts.Maui;
 using Microsoft.Extensions.Logging;
 using Microsoft.Maui.Controls.Compatibility.Hosting;
 using DependencyService = Amptron.Services.DependencyService;
@@ -18,6 +19,7 @@ public static class MauiProgram
             .UseMauiCompatibility()
             .UseMauiCommunityToolkit()
             .UseMauiCommunityToolkitMarkup()
+			.UseMicrocharts()
             .ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
