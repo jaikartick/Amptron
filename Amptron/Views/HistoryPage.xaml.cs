@@ -1,5 +1,5 @@
 ﻿using Amptron.ViewModels;
-using Microcharts;
+//using Microcharts;
 
 namespace Amptron.Views;
 

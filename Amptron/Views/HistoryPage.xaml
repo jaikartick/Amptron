@@ -2,12 +2,13 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Amptron.Views.HistoryPage"
-             xmlns:chart="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
              Title="HistoryPage"
              NavigationPage.HasNavigationBar="False"
              xmlns:viewmodels="clr-namespace:Amptron.ViewModels"
              x:DataType="viewmodels:HistoryViewModel">
     <ScrollView Orientation="Horizontal">
-        <chart:ChartView Chart="{Binding Chart1}" IgnorePixelScaling="True" x:Name="chartView" HeightRequest="300" />
+        <!--xmlns:chart="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"-->
+
+        <!--<chart:ChartView Chart="{Binding Chart1}" IgnorePixelScaling="True" x:Name="chartView" HeightRequest="300" />-->
     </ScrollView>
 </ContentPage>

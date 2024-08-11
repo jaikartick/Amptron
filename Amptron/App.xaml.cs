@@ -12,6 +12,8 @@ public partial class App : Application
     public static new IServiceProvider Current =>
 #if ANDROID
      MauiApplication.Current.Services;
+#elif WINDOWS
+        MauiWinUIApplication.Current.Services;
 #else
             MauiUIApplicationDelegate.Current.Services;
 #endif

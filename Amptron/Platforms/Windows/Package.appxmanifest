@@ -35,11 +35,19 @@
         BackgroundColor="transparent">
         <uap:DefaultTile Square71x71Logo="$placeholder$.png" Wide310x150Logo="$placeholder$.png" Square310x310Logo="$placeholder$.png" />
         <uap:SplashScreen Image="$placeholder$.png" />
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="portrait"/>
+          <uap:Rotation Preference="landscape"/></uap:InitialRotationPreference>
+        <uap:LockScreen Notification="badge"/>
       </uap:VisualElements>
+		<Extensions>
+			<Extension Category="windows.fullTrustProcess" Executable="FullTrust\FullTrust.exe" />
+		</Extensions>
     </Application>
   </Applications>
 
   <Capabilities>
+	  <DeviceCapability Name="location" />
     <rescap:Capability Name="runFullTrust" />
   </Capabilities>
 

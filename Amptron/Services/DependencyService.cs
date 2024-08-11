@@ -8,6 +8,8 @@ namespace Amptron.Services
         public static IServiceProvider Current =>
 #if ANDROID
             MauiApplication.Current.Services;
+#elif WINDOWS
+            MauiWinUIApplication.Current.Services;
 #else
             MauiUIApplicationDelegate.Current.Services;
 #endif
